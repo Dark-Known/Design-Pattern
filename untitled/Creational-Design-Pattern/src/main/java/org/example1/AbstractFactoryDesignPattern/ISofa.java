@@ -4,5 +4,5 @@ public interface ISofa {
     int  getunitsSold();
     String getmanfName();
     String getmanfInfo();
-    String getlegsCount();
+    int getlegsCount();
 }

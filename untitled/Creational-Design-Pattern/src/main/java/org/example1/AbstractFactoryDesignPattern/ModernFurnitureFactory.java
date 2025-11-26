@@ -1,13 +1,14 @@
 package org.example1.AbstractFactoryDesignPattern;
 
-public class VictoriaFurnitureFactory extends FurnitureFamilyFactory{
+public class ModernFurnitureFactory extends FurnitureFamilyFactory {
+
     @Override
     public IChair createChair() {
-        return new VictoriaChair();
+        return new ModernChair();
     }
 
     @Override
     public ISofa createSofa() {
-        return new VictoriaSofa();
+        return new ModernSofa();
     }
 }

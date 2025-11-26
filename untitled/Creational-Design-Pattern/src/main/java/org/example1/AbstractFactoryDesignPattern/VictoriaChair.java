@@ -1,24 +1,28 @@
 package org.example1.AbstractFactoryDesignPattern;
 
 public class VictoriaChair implements IChair{
+    static int unitsSold=0;
+    VictoriaChair(){
+        VictoriaChair.unitsSold=VictoriaChair.unitsSold+1;
+    }
 
     @Override
     public int getunitsSold() {
-        return 0;
+        return VictoriaChair.unitsSold;
     }
 
     @Override
     public String getmanfName() {
-        return "";
+        return VictoriaFamilyInfo.MANF_NAME.getName();
     }
 
     @Override
     public String getmanfInfo() {
-        return "";
+        return VictoriaFamilyInfo.MANF_ADD.getName();
     }
 
     @Override
-    public String getlegsCount() {
-        return "";
+    public int getlegsCount() {
+        return VictoriaFamilyInfo.LEGS.getValue();
     }
 }
