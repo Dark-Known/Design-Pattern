@@ -14,7 +14,7 @@ public class Main {
 
         // using factory Method
         responseQueue.forEach((JsonObj res) -> {
-            NotificationServiceWithFM.pushNotification(res.getTransportMode(),);
+            NotificationServiceWithFM.pushNotification(res.getTransportMode(),res.getCargo());
         });
 
 
