@@ -1,11 +1,8 @@
-package org.example1.FactoryDesignPattern;
+package FactoryDesignPattern;
 
-class Ship implements Vehicle {
-
-
+class AirCraft implements Vehicle {
     @Override
     public void run() {
-
     }
 
     @Override
@@ -20,6 +17,6 @@ class Ship implements Vehicle {
 
     @Override
     public void deliver() {
-        System.out.println("Delivering via Water");
+        System.out.println("Delivering via Air");
     }
 }

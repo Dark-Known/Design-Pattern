@@ -1,9 +1,9 @@
-package org.example1.AbstractFactoryDesignPattern;
+package AbstractFactoryDesignPattern;
 
 public abstract class FurnitureFamilyFactory {
 
     public abstract IChair createChair();
-    public abstract ISofa createSofa();
 
+    public abstract ISofa createSofa();
 
 }

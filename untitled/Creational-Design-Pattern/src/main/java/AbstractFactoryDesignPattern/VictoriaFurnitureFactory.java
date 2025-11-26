@@ -1,13 +1,13 @@
-package org.example1.AbstractFactoryDesignPattern;
+package AbstractFactoryDesignPattern;
 
 public class VictoriaFurnitureFactory extends FurnitureFamilyFactory{
     @Override
     public IChair createChair() {
-        return null;
+        return new VictoriaChair();
     }
 
     @Override
     public ISofa createSofa() {
-        return null;
+        return new VictoriaSofa();
     }
 }

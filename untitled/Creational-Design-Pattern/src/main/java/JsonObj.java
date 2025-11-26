@@ -1,5 +1,3 @@
-package org.example1;
-
 public class JsonObj {
     private final String transportMode;
     private final int distance;

@@ -1,8 +1,9 @@
-package org.example1.AbstractFactoryDesignPattern;
+package AbstractFactoryDesignPattern;
 
 public interface ISofa {
     int  getunitsSold();
     String getmanfName();
     String getmanfInfo();
-    String getlegsCount();
+    int getlegsCount();
+    String getMaterialUsed();
 }
