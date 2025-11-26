@@ -1,4 +1,4 @@
-package org.example1.FactoryDesignPattern;
+package FactoryDesignPattern;
 
 class TruckFactory extends VehicleFactory {
 

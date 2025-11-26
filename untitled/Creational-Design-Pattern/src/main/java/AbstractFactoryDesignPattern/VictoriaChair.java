@@ -1,13 +1,14 @@
-package org.example1.AbstractFactoryDesignPattern;
+package AbstractFactoryDesignPattern;
 
-public class VictoriaSofa implements ISofa{
+public class VictoriaChair implements IChair{
     static int unitsSold=0;
-    VictoriaSofa(){
-        VictoriaSofa.unitsSold=VictoriaSofa.unitsSold+1;
+    VictoriaChair(){
+        VictoriaChair.unitsSold=VictoriaChair.unitsSold+1;
     }
+
     @Override
     public int getunitsSold() {
-        return VictoriaSofa.unitsSold;
+        return VictoriaChair.unitsSold;
     }
 
     @Override

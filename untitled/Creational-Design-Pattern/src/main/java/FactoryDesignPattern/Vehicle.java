@@ -1,4 +1,4 @@
-package org.example1.FactoryDesignPattern;
+package FactoryDesignPattern;
 
 interface Vehicle {
     void run();

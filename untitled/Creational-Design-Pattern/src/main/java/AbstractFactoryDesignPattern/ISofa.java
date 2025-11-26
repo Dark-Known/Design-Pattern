@@ -1,6 +1,6 @@
-package org.example1.AbstractFactoryDesignPattern;
+package AbstractFactoryDesignPattern;
 
-public interface IChair {
+public interface ISofa {
     int  getunitsSold();
     String getmanfName();
     String getmanfInfo();

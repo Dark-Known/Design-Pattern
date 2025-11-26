@@ -1,4 +1,4 @@
-package org.example1.AbstractFactoryDesignPattern;
+package AbstractFactoryDesignPattern;
 
 public class VictoriaFurnitureFactory extends FurnitureFamilyFactory{
     @Override

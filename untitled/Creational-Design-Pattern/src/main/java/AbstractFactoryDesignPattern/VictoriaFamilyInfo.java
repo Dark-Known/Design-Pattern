@@ -1,4 +1,4 @@
-package org.example1.AbstractFactoryDesignPattern;
+package AbstractFactoryDesignPattern;
 
  enum VictoriaFamilyInfo {
     MANF_NAME("Victorian COMPANY"),

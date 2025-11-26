@@ -1,7 +1,5 @@
-package org.example1;
-
-import org.example1.FactoryDesignPattern.TransportFactorySelector;
-import org.example1.FactoryDesignPattern.VehicleFactory;
+import FactoryDesignPattern.TransportFactorySelector;
+import FactoryDesignPattern.VehicleFactory;
 
 public class NotificationServiceWithFM {
     public static void pushNotification(String TransportType) {
