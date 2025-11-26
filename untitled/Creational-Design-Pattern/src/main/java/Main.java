@@ -4,9 +4,9 @@ import java.util.Arrays;
 public class Main {
     public static void main(String[] args) {
         // after some server side ops we get jsonObj
-        JsonObj res1 = new JsonObj("Road", 500, "Goods");
-        JsonObj res2 = new JsonObj("Water", 3000, "Containers");
-        JsonObj res3 = new JsonObj("Air", 5000, "Supplies");
+        JsonObj res1 = new JsonObj("Road", 500, "modern chair");
+        JsonObj res2 = new JsonObj("Water", 3000, "Victoria Sofa");
+        JsonObj res3 = new JsonObj("Air", 5000, "modern sofa");
         ArrayList<JsonObj> responseQueue = new ArrayList<>(
                 Arrays.asList(res1, res2, res3)
         );
@@ -14,7 +14,7 @@ public class Main {
 
         // using factory Method
         responseQueue.forEach((JsonObj res) -> {
-            NotificationServiceWithFM.pushNotification(res.getTransportMode());
+            NotificationServiceWithFM.pushNotification(res.getTransportMode(),);
         });
 
 

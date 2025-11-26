@@ -25,4 +25,9 @@ public class VictoriaChair implements IChair{
     public int getlegsCount() {
         return VictoriaFamilyInfo.LEGS.getValue();
     }
+
+    @Override
+    public String getMaterialUsed() {
+        return VictoriaFamilyInfo.MATERIAL.getName();
+    }
 }

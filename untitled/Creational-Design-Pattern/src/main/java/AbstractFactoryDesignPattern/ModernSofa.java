@@ -26,4 +26,9 @@ public class ModernSofa implements ISofa{
     public int getlegsCount() {
         return ModernFamilyInfo.LEGS.getValue();
     }
+
+    @Override
+    public String getMaterialUsed() {
+        return ModernFamilyInfo.MATERIAL.getName();
+    }
 }

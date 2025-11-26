@@ -25,4 +25,11 @@ public class ModernChair implements IChair{
     public int getlegsCount() {
         return ModernFamilyInfo.LEGS.getValue();
     }
+
+    @Override
+    public String getMaterialUsed() {
+        return ModernFamilyInfo.MATERIAL.getName();
+    }
+
+
 }

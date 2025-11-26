@@ -3,6 +3,7 @@ package AbstractFactoryDesignPattern;
  enum VictoriaFamilyInfo {
     MANF_NAME("Victorian COMPANY"),
     MANF_ADD("Victorian ADDRESS"),
+     MATERIAL("cotton"),
     LEGS(4);
     private  String name;
     private int count;

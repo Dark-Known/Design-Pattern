@@ -3,6 +3,7 @@ package AbstractFactoryDesignPattern;
 enum ModernFamilyInfo {
     MANF_NAME("Modern COMPANY"),
     MANF_ADD("Modern ADDRESS"),
+    MATERIAL("silk"),
     LEGS(4);
     private  String name;
     private int count;
