@@ -7,6 +7,7 @@ public class TransportInfoNotification {
     private String userName;
     private String transportType;
     private String userAddress;
+    private int distanceInfo;
 
     public void setTimeStamp(String timeStamp)
     {
@@ -24,6 +25,10 @@ public class TransportInfoNotification {
     public void setTransportType(String transportType)
     {
         this.transportType=transportType;
+    }
+    public void setDistanceInfo(int distanceInfo)
+    {
+        this.distanceInfo=distanceInfo;
     }
 
 
