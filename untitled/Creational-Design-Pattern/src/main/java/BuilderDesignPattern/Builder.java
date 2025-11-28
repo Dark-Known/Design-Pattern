@@ -5,4 +5,7 @@ public interface Builder {
     public Builder setTransportInfo();
     public Builder setDistanceInfo();
     public Builder setCargoInfo();
+    public Builder setUserName();
+    public Builder setUserAddress();
+
 }
