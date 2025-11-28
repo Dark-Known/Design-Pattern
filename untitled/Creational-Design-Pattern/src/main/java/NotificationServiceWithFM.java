@@ -18,7 +18,7 @@ public class NotificationServiceWithFM {
             // get furniture family using furniture factory
             FamilySelector selector= new FamilySelector(furnitureFamilyName);
             FurnitureFamilyFactory familyFactory=selector.getFamilyFactory();
-            // create furniture for specific family using furniture factory and funriture typeName
+            // create furniture for specific family using furniture factory and furniture typeName
             FurnitureSelector furnitureSelector= new FurnitureSelector(furnitureName,familyFactory);
             furnitureSelector.getFurniture();
 
