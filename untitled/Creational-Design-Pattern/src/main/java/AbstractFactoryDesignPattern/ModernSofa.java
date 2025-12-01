@@ -24,7 +24,7 @@ public class ModernSofa implements ISofa{
 
     @Override
     public int getlegsCount() {
-        return ModernFamilyInfo.LEGS.getValue();
+        return ModernFamilyInfo.SOFA_LEGS.getValue();
     }
 
     @Override
