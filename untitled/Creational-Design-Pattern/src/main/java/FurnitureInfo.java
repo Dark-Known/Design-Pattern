@@ -1,13 +1,11 @@
-import java.lang.foreign.SymbolLookup;
-
-public class FurnitureInfoObj  {
+public class FurnitureInfo {
     private final String manfName;
     private final String manfDate;
     private final int unitsSold;
     private final String materialUsed;
 
-    FurnitureInfoObj(String manfName, String manfDate,
-                     String materialUsed,int unitsSold )
+    FurnitureInfo(String manfName, String manfDate,
+                  String materialUsed, int unitsSold )
     {
         this.manfName=manfName;
         this.manfDate=manfDate;

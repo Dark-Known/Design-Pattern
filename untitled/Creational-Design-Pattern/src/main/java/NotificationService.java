@@ -5,6 +5,7 @@ import AbstractFactoryDesignPattern.FurnitureSelector;
 import BuilderDesignPattern.Builder;
 import BuilderDesignPattern.CargoInfoNotification;
 import BuilderDesignPattern.CargoNotificationBuilder;
+import BuilderDesignPattern.TransportInfoNotification;
 import FactoryDesignPattern.TransportFactorySelector;
 import FactoryDesignPattern.VehicleFactory;
 
@@ -42,5 +43,12 @@ public class NotificationService {
                                                                 setDistanceInfo(distanceInfo).
                                                                 setCargoInfo(cargoInfo);
         return notificationBuilder.build();
+    }
+
+    public TransportInfoNotification buildTransportNotification(String timeStamp,String transportType,
+                                                                UserInfo userInfoObj,String sourceAddress
+                                                                )
+    {
+
     }
 }
