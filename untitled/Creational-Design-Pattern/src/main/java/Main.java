@@ -1,7 +1,8 @@
-import java.time.Instant;
+import BuilderDesignPattern.CargoInfoNotification;
+import BuilderDesignPattern.CargoNotificationBuilder;
+
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Calendar;
 
 public class Main {
     public static void main(String[] args) {
@@ -15,9 +16,13 @@ public class Main {
 
 
         // using factory Method
-        responseQueue.forEach((JsonObj res) -> {
-            NotificationService.pushNotification(res.getTransportMode(),res.getCargo());
-        });
+//        responseQueue.forEach((JsonObj res) -> {
+//            NotificationService.pushNotification(res.getTransportMode(),res.getCargo());
+//        });
+
+
+
+
 
 
     }

@@ -2,58 +2,59 @@ package BuilderDesignPattern;
 
 import AbstractFactoryDesignPattern.FurnitureInfo;
 
-public class CargoNotificationBuilder implements Builder{
+public class CargoNotificationBuilder implements Builder<CargoInfoNotification>{
     private CargoInfoNotification notification;
 
     @Override
-    public Builder reset() {
-        this.notification = new CargoInfoNotification();
+    public Builder<CargoInfoNotification> reset() {
+        notification = new CargoInfoNotification();
         return this;
     }
 
     @Override
-    public Builder setTransportType(String transportType) {
+    public Builder<CargoInfoNotification> setTransportType(String transportType) {
         notification.setTransportType(transportType);
         return this;
     }
 
     @Override
-    public Builder setDistanceInfo(int distanceInfo) {
+    public Builder<CargoInfoNotification> setDistanceInfo(int distanceInfo) {
         notification.setDistanceInfo(distanceInfo);
         return this;
     }
 
     @Override
-    public Builder setCargoInfo(FurnitureInfo furnitureInfo) {
+    public Builder<CargoInfoNotification> setCargoInfo(FurnitureInfo furnitureInfo) {
         notification.setCargoInfo(furnitureInfo);
         return this;
     }
 
     @Override
-    public Builder setUserName(String userName) {
+    public Builder<CargoInfoNotification> setUserName(String userName) {
         return this;
     }
 
     @Override
-    public Builder setUserAddress(String userAddress) {
+    public Builder<CargoInfoNotification> setUserAddress(String userAddress) {
         return this;
     }
 
     @Override
-    public Builder setSourceAddress(String sourceAddress) {
+    public Builder<CargoInfoNotification> setSourceAddress(String sourceAddress) {
         return this;
     }
 
     @Override
-    public Builder setDestAddress(String destAddress) {
+    public Builder<CargoInfoNotification> setDestAddress(String destAddress) {
         return this;
     }
 
     @Override
-    public Builder setTimeStamp(String timeStamp) {
+    public Builder<CargoInfoNotification> setTimeStamp(String timeStamp) {
         notification.setTimeStamp(timeStamp);
         return this;
     }
+
     public CargoInfoNotification build(){
         return notification;
     }

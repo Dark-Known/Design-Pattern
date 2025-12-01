@@ -1,11 +1,15 @@
 import AbstractFactoryDesignPattern.FamilySelector;
 import AbstractFactoryDesignPattern.FurnitureFamilyFactory;
+import AbstractFactoryDesignPattern.FurnitureInfo;
 import AbstractFactoryDesignPattern.FurnitureSelector;
+import BuilderDesignPattern.Builder;
+import BuilderDesignPattern.CargoInfoNotification;
+import BuilderDesignPattern.CargoNotificationBuilder;
 import FactoryDesignPattern.TransportFactorySelector;
 import FactoryDesignPattern.VehicleFactory;
 
 public class NotificationService {
-    public static void pushNotification(String TransportType,String cargoName) {
+    public void pushNotification(String TransportType,String cargoName) {
         try {
             // notify user with their transport type
             VehicleFactory factory = TransportFactorySelector.getTransportFactory(TransportType);
@@ -18,20 +22,25 @@ public class NotificationService {
             // get furniture family using furniture factory
             FamilySelector selector= new FamilySelector(furnitureFamilyName);
             FurnitureFamilyFactory familyFactory=selector.getFamilyFactory();
+            FurnitureInfo cargoInfo= selector.getFamilyInfo();
             // create furniture for specific family using furniture factory and furniture typeName
             FurnitureSelector furnitureSelector= new FurnitureSelector(furnitureName,familyFactory);
             furnitureSelector.getFurniture();
-
-
-
-
-
-
-
 
         } catch (Exception e) {
             System.err.println(e.getMessage());
         }
 
+    }
+
+    public CargoInfoNotification buildCargoNotification(String timeStamp, String transportType,
+                                                        int distanceInfo , FurnitureInfo cargoInfo)
+    {
+        Builder<CargoInfoNotification> notificationBuilder= new CargoNotificationBuilder().
+                                                                setTimeStamp(timeStamp).
+                                                                setTransportType(transportType).
+                                                                setDistanceInfo(distanceInfo).
+                                                                setCargoInfo(cargoInfo);
+        return notificationBuilder.build();
     }
 }

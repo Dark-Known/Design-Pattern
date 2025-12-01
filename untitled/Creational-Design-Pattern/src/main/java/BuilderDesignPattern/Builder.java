@@ -2,16 +2,17 @@ package BuilderDesignPattern;
 
 import AbstractFactoryDesignPattern.FurnitureInfo;
 
-public interface Builder {
-    public Builder reset();
-    public Builder setTransportType(String transportType);
-    public Builder setDistanceInfo(int distanceInfo);
-    public Builder setCargoInfo(FurnitureInfo furnitureInfo);
-    public Builder setUserName(String userName);
-    public Builder setUserAddress(String userAddress);
-    public Builder setSourceAddress(String sourceAddress);
-    public Builder setDestAddress(String destAddress);
-    public Builder setTimeStamp(String timeStamp);
+public interface Builder<T> {
+    public Builder<T> reset();
+    public Builder<T> setTransportType(String transportType);
+    public Builder<T> setDistanceInfo(int distanceInfo);
+    public Builder<T> setCargoInfo(FurnitureInfo furnitureInfo);
+    public Builder<T> setUserName(String userName);
+    public Builder<T> setUserAddress(String userAddress);
+    public Builder<T> setSourceAddress(String sourceAddress);
+    public Builder<T> setDestAddress(String destAddress);
+    public Builder<T> setTimeStamp(String timeStamp);
+    public T build();
 
 
 }
