@@ -2,10 +2,7 @@ import AbstractFactoryDesignPattern.FamilySelector;
 import AbstractFactoryDesignPattern.FurnitureFamilyFactory;
 import AbstractFactoryDesignPattern.FurnitureInfo;
 import AbstractFactoryDesignPattern.FurnitureSelector;
-import BuilderDesignPattern.Builder;
-import BuilderDesignPattern.CargoInfoNotification;
-import BuilderDesignPattern.CargoNotificationBuilder;
-import BuilderDesignPattern.TransportInfoNotification;
+import BuilderDesignPattern.*;
 import FactoryDesignPattern.TransportFactorySelector;
 import FactoryDesignPattern.VehicleFactory;
 
@@ -46,9 +43,17 @@ public class NotificationService {
     }
 
     public TransportInfoNotification buildTransportNotification(String timeStamp,String transportType,
-                                                                UserInfo userInfoObj,String sourceAddress
-                                                                )
+                                                                UserInfo userInfoObj,AddressInfo addressInfo)
     {
-
+        Builder<TransportInfoNotification> notificationBuilder = new TransportNotificationBuilder().
+                                                                        setTimeStamp(timeStamp).
+                                                                        setTransportType(transportType).
+                                                                        setUserName(userInfoObj.getUserName()).
+                                                                        setUserAddress(userInfoObj.getUserAddress()).
+                                                                        setSourceAddress(addressInfo.getSourceAddress()).
+                                                                        setDestAddress(addressInfo.getDestAddress());
+        return notificationBuilder.build();
     }
+
+
 }
