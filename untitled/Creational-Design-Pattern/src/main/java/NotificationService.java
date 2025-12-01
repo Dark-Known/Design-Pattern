@@ -4,7 +4,7 @@ import AbstractFactoryDesignPattern.FurnitureSelector;
 import FactoryDesignPattern.TransportFactorySelector;
 import FactoryDesignPattern.VehicleFactory;
 
-public class NotificationServiceWithFM {
+public class NotificationService {
     public static void pushNotification(String TransportType,String cargoName) {
         try {
             // notify user with their transport type
