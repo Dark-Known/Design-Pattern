@@ -37,4 +37,8 @@ public class FurnitureSelector {
         return selector.getMethod(familyFactory);
 
     }
+    public void setFurnitureInfoObj(){
+
+
+    }
 }

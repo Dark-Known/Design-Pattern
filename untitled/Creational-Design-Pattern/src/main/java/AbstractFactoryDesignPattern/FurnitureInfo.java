@@ -1,14 +1,14 @@
 package AbstractFactoryDesignPattern;
 
-public class CargoInfo {
+public class FurnitureInfo {
     private final String manfName;
     private final  String manfAddress;
     private final String materialUsed;
     private final String manfDate;
 
 
-    public CargoInfo(String manfName, String manfAddress,
-                     String materialUsed, String manfDate) {
+    public FurnitureInfo(String manfName, String manfAddress,
+                         String materialUsed, String manfDate) {
         this.manfName = manfName;
         this.manfAddress = manfAddress;
         this.materialUsed = materialUsed;

@@ -1,6 +1,6 @@
 package BuilderDesignPattern;
 
-import AbstractFactoryDesignPattern.CargoInfo;
+import AbstractFactoryDesignPattern.FurnitureInfo;
 
 public class TransportNotificationBuilder implements Builder {
     private TransportInfoNotification notification;
@@ -24,7 +24,7 @@ public class TransportNotificationBuilder implements Builder {
     }
 
     @Override
-    public Builder setCargoInfo(CargoInfo cargoInfo) {
+    public Builder setCargoInfo(FurnitureInfo furnitureInfo) {
         return this;
     }
 
