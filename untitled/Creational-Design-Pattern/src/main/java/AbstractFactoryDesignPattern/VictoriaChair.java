@@ -23,7 +23,7 @@ public class VictoriaChair implements IChair{
 
     @Override
     public int getlegsCount() {
-        return VictoriaFamilyInfo.LEGS.getValue();
+        return VictoriaFamilyInfo.CHAIR_LEGS.getValue();
     }
 
     @Override

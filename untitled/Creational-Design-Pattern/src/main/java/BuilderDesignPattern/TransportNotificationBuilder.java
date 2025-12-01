@@ -1,35 +1,35 @@
 package BuilderDesignPattern;
 
-import AbstractFactoryDesignPattern.CargoInfo;
+import AbstractFactoryDesignPattern.FurnitureInfo;
 
-public class TransportNotificationBuilder implements Builder {
+public class TransportNotificationBuilder implements Builder<TransportInfoNotification> {
     private TransportInfoNotification notification;
 
     @Override
-    public Builder reset() {
+    public Builder<TransportInfoNotification> reset() {
         this.notification= new TransportInfoNotification();
         return this;
     }
 
     @Override
-    public Builder setTransportType(String transportType) {
+    public Builder<TransportInfoNotification> setTransportType(String transportType) {
         notification.setTransportType(transportType);
         return this;
     }
 
     @Override
-    public Builder setDistanceInfo(int distanceInfo) {
+    public Builder<TransportInfoNotification> setDistanceInfo(int distanceInfo) {
         notification.setDistanceInfo(distanceInfo);
         return this;
     }
 
     @Override
-    public Builder setCargoInfo(CargoInfo cargoInfo) {
+    public Builder<TransportInfoNotification> setCargoInfo(FurnitureInfo furnitureInfo) {
         return this;
     }
 
     @Override
-    public Builder setUserName(String userName) {
+    public Builder<TransportInfoNotification> setUserName(String userName) {
 
         notification.setUserName(userName);
         return this;
@@ -37,25 +37,25 @@ public class TransportNotificationBuilder implements Builder {
     }
 
     @Override
-    public Builder setUserAddress(String userAddress) {
+    public Builder<TransportInfoNotification> setUserAddress(String userAddress) {
         notification.setUserAddress(userAddress);
         return this;
     }
 
     @Override
-    public Builder setSourceAddress(String sourceAddress) {
+    public Builder<TransportInfoNotification> setSourceAddress(String sourceAddress) {
         notification.setSourceAddress(sourceAddress);
         return this;
     }
 
     @Override
-    public Builder setDestAddress(String destAddress) {
+    public Builder<TransportInfoNotification> setDestAddress(String destAddress) {
         notification.setDestAddress(destAddress);
         return this;
     }
 
     @Override
-    public Builder setTimeStamp(String timeStamp) {
+    public Builder<TransportInfoNotification> setTimeStamp(String timeStamp) {
         notification.setTimeStamp(timeStamp);
         return this;
     }

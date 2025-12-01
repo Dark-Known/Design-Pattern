@@ -23,7 +23,7 @@ public class ModernChair implements IChair{
 
     @Override
     public int getlegsCount() {
-        return ModernFamilyInfo.LEGS.getValue();
+        return ModernFamilyInfo.CHAIR_LEGS.getValue();
     }
 
     @Override

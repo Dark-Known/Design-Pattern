@@ -22,7 +22,7 @@ public class VictoriaSofa implements ISofa{
 
     @Override
     public int getlegsCount() {
-        return VictoriaFamilyInfo.LEGS.getValue();
+        return VictoriaFamilyInfo.SOFA_LEGS.getValue();
     }
 
     @Override

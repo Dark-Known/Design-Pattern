@@ -27,6 +27,12 @@ public class FamilySelector {
         this.familyName= familyName;
     }
 
+    public FurnitureInfo getFamilyInfo()
+    {
+        FurnitureFamilyFactory familyFactory= this.getFamilyFactory();
+        return familyFactory.getFamilyInfo();
+    }
+
     public  FurnitureFamilyFactory getFamilyFactory()
     {
         return FamilyEnum.getFamilyType(familyName.toUpperCase()).getFamilyFactory();

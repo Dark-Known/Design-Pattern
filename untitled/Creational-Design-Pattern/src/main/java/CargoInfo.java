@@ -1,8 +1,8 @@
-public class CargoInfoObj {
+public class CargoInfo {
     private final String cargoName;
-    private final FurnitureInfoObj furnitureInfoObj;
+    private final FurnitureInfo furnitureInfoObj;
 
-    CargoInfoObj(String cargoName, FurnitureInfoObj furnitureInfoObj)
+    CargoInfo(String cargoName, FurnitureInfo furnitureInfoObj)
     {
         this.cargoName=cargoName;
         this.furnitureInfoObj=furnitureInfoObj;
@@ -11,7 +11,7 @@ public class CargoInfoObj {
     public String getCargoName(){
         return this.cargoName;
     }
-    public FurnitureInfoObj getFurnitureInfoObj(){
+    public FurnitureInfo getFurnitureInfoObj(){
         return this.furnitureInfoObj;
     }
 

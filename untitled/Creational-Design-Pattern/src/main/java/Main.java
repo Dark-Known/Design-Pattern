@@ -1,3 +1,6 @@
+import BuilderDesignPattern.CargoInfoNotification;
+import BuilderDesignPattern.CargoNotificationBuilder;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -13,9 +16,12 @@ public class Main {
 
 
         // using factory Method
-        responseQueue.forEach((JsonObj res) -> {
-            NotificationServiceWithFM.pushNotification(res.getTransportMode(),res.getCargo());
-        });
+//        responseQueue.forEach((JsonObj res) -> {
+//            NotificationService.pushNotification(res.getTransportMode(),res.getCargo());
+//        });
+
+
+
 
 
 

@@ -1,12 +1,12 @@
 package BuilderDesignPattern;
 
-import AbstractFactoryDesignPattern.CargoInfo;
+import AbstractFactoryDesignPattern.FurnitureInfo;
 
 public class CargoInfoNotification {
     private String timeStamp;
     private String transportType;
     private int distanceInfo;
-    private CargoInfo cargoInfo;
+    private FurnitureInfo furnitureInfo;
 
     public void setTimeStamp(String timeStamp)
     {
@@ -16,9 +16,9 @@ public class CargoInfoNotification {
     {
         this.transportType=transportType;
     }
-    public void setCargoInfo(CargoInfo cargoInfo)
+    public void setCargoInfo(FurnitureInfo furnitureInfo)
     {
-        this.cargoInfo=cargoInfo;
+        this.furnitureInfo = furnitureInfo;
     }
     public void setDistanceInfo(int distanceInfo)
     {
