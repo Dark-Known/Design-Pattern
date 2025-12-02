@@ -66,5 +66,10 @@ public class FieldMapper {
     }
 
 
+    public boolean IsSet(){
+        return this.isSet;
+    }
+
+
 
 }
