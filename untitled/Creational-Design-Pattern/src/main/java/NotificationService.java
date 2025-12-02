@@ -23,7 +23,7 @@ public class NotificationService {
             // notify user with their transport type
             VehicleFactory vehiclefactory = TransportFactorySelector.getTransportFactory(cargoInfoObj.getTransportType());
             vehiclefactory.notifyUser();
-            // build different notifications using their builders
+            // build different notifications using their respective builders
             CargoInfoNotification cargoNotification=buildCargoNotification();
             TransportInfoNotification transportNotification= buildTransportNotification();
 
