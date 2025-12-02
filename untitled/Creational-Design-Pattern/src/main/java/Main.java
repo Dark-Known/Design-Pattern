@@ -22,23 +22,15 @@ public class Main {
                 Arrays.asList(res1, res2, res3)
         );
 
-//
+
 //         using factory Method
         responseQueue.forEach((JsonObj res) -> {
-
-
             FieldMapper fieldMapper= new FieldMapper(res);
             String timeStamp= CurrentTimeService.getNow();
 
 
             try {
-                if (!fieldMapper.IsSet()) {
-                   fieldMapper.map();
-                }
-                else
-                {
-                    throw new Exception("Cant modify this object as it already exists");
-                }
+                fieldMapper.map();
             }
             catch(Exception e)
             {
@@ -47,6 +39,14 @@ public class Main {
             NotificationService notificationService= new NotificationService(timeStamp,fieldMapper.getUserInfoObj(),
                     fieldMapper.getAddressInfoObj(),fieldMapper.getCargoInfoObj());
             notificationService.pushNotification();
+
+            try{
+                fieldMapper.map();
+            }
+            catch (Exception e)
+            {
+                System.err.println(e.getMessage());
+            }
 
         });
 

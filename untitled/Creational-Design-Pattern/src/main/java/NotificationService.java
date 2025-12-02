@@ -26,6 +26,7 @@ public class NotificationService {
             // build different notifications using their builders
             CargoInfoNotification cargoNotification=buildCargoNotification();
             TransportInfoNotification transportNotification= buildTransportNotification();
+
             System.out.println("cargo :"+cargoNotification.toString());
             System.out.println("Transport :"+transportNotification.toString());
 

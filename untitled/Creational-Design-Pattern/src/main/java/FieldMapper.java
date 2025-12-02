@@ -42,12 +42,19 @@ public class FieldMapper {
     }
 
 
-    public void map()
+    public void map() throws Exception
     {
+        if(!this.IsSet()){
         mapCargoInfoObj();
         mapAddressInfoObj();
         mapUserInfoObj();
         isSet=true;
+        }
+        else
+        {
+            throw new Exception("Fields have already been mapped");
+        }
+
     }
 
     public UserInfo getUserInfoObj(){
