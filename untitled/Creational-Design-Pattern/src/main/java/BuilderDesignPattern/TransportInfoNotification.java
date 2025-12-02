@@ -1,6 +1,7 @@
 package BuilderDesignPattern;
 
 
+import java.sql.Time;
 
 public class TransportInfoNotification {
     private String timeStamp;
@@ -43,5 +44,19 @@ public class TransportInfoNotification {
         this.distanceInfo=distanceInfo;
     }
 
+    @Override
+    public String toString(){
+        return " "+'\n'+"{"+'\n'+ "Time Stamp :" + timeStamp+'\n'+
+                "User Name :"+userName+'\n'+
+                "User Address :"+userAddress +'\n'+
+                "transportType :"+ transportType+'\n'+
+                "distanceInfo :"+ distanceInfo + '\n' +
+                "Source Address :"+sourceAddress+'\n'+
+                "Destination Address :"+destAddress+'\n'+
+                "}" +'\n';
 
+    }
 }
+
+
+

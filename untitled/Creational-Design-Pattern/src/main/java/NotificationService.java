@@ -26,6 +26,8 @@ public class NotificationService {
             // build different notifications using their builders
             CargoInfoNotification cargoNotification=buildCargoNotification();
             TransportInfoNotification transportNotification= buildTransportNotification();
+            System.out.println("cargo :"+cargoNotification.toString());
+            System.out.println("Transport :"+transportNotification.toString());
 
 //
 //            // extract furniture name , furniture type
@@ -65,6 +67,7 @@ public class NotificationService {
     {
         Builder<TransportInfoNotification> notificationBuilder = new TransportNotificationBuilder().
                                                                         setTimeStamp(timeStamp).
+                                                                        setDistanceInfo(cargoInfoObj.getDistanceInfo()).
                                                                         setTransportType(cargoInfoObj.getTransportType()).
                                                                         setUserName(userInfoObj.getUserName()).
                                                                         setUserAddress(userInfoObj.getUserAddress()).

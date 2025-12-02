@@ -36,4 +36,20 @@ public class CargoInfoNotification {
     {
         this.userAddress=userAddress;
     }
+
+    @Override
+    public String toString(){
+        return " "+'\n'+"{"+'\n'+ "Time Stamp :"+ timeStamp+'\n'+
+                "User Name :"+userName+'\n'+
+                "User Address :"+userAddress +'\n'+
+                "transportType :"+ transportType+'\n'+
+                "distanceInfo :"+ distanceInfo + '\n' +
+                "Cargo Name :"+cargoName+'\n'+
+                "Manufacturer Name :"+furnitureInfo.getManfName()+'\n'+
+                "Manufacturer Address :"+furnitureInfo.getManfAddress()+'\n'+
+                "Manufacture Date :"+furnitureInfo.getManfDate()+'\n'+
+                "Material Used :"+furnitureInfo.getMaterialUsed()+'\n'+
+                "}" +'\n';
+
+    }
 }

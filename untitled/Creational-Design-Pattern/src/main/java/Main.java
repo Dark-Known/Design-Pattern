@@ -9,9 +9,15 @@ import java.util.Arrays;
 public class Main {
     public static void main(String[] args) {
         // after some server side ops we get jsonObj
-        JsonObj res1 = new JsonObj("Road", 500, "modern chair");
-        JsonObj res2 = new JsonObj("Water", 3000, "Victoria Sofa");
-        JsonObj res3 = new JsonObj("Air", 5000, "modern sofa");
+        JsonObj res1 = new JsonObj("Road", 500, "modern chair",
+                                    "User1", "Address1",
+                                        "SourceAddress1","destinationAddress1");
+        JsonObj res2 = new JsonObj("Water", 3000, "Victoria Sofa",
+                                    "User2", "Address2",
+                                "SourceAddress2","destinationAddress2");
+        JsonObj res3 = new JsonObj("Air", 5000, "modern sofa",
+                                    "User3", "Address3",
+                                    "SourceAddress3","destinationAddress3");
         ArrayList<JsonObj> responseQueue = new ArrayList<>(
                 Arrays.asList(res1, res2, res3)
         );
@@ -22,11 +28,12 @@ public class Main {
 
 
             FieldMapper fieldMapper= new FieldMapper(res);
+            String timeStamp= CurrentTimeService.getNow();
+
 
             try {
                 if (!fieldMapper.IsSet()) {
                    fieldMapper.map();
-
                 }
                 else
                 {
@@ -37,8 +44,9 @@ public class Main {
             {
                 System.out.println(e.getMessage());
             }
-            NotificationService notificationService= new NotificationService()
-
+            NotificationService notificationService= new NotificationService(timeStamp,fieldMapper.getUserInfoObj(),
+                    fieldMapper.getAddressInfoObj(),fieldMapper.getCargoInfoObj());
+            notificationService.pushNotification();
 
         });
 

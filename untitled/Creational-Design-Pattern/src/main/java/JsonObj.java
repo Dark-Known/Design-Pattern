@@ -7,7 +7,9 @@ public class JsonObj {
     private final String sourceAddress;
     private final String destAddress;
 
-    JsonObj(String transportMode, int distance, String cargo, String userName, String userAddress, String sourceAddress, String destAddress) {
+    JsonObj(String transportMode, int distance, String cargo,
+            String userName, String userAddress,
+            String sourceAddress, String destAddress) {
         this.transportMode = transportMode;
         this.distance = distance;
         this.cargo = cargo;

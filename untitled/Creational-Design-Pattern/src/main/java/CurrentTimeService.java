@@ -6,7 +6,12 @@ public class CurrentTimeService {
         String[] tempSplitArr=timeStamp.split("T");
         String tempTimeStamp= tempSplitArr[1];
         String[] tempSplitArr1= tempTimeStamp.split("\\.");
-        return tempSplitArr1[1];
+        return getDate()+" "+tempSplitArr1[0];
+    }
+    public static String getDate(){
+        String timeStamp= Instant.now().toString();
+        String[] tempSplitArr=timeStamp.split("T");
+        return tempSplitArr[0];
     }
 
 }
