@@ -2,6 +2,7 @@ import AbstractFactoryDesignPattern.FurnitureInfo;
 
 public class CargoInfo {
     private final String cargoName;
+    private final String transportType;
     private final FurnitureInfo furnitureInfoObj;
 
     CargoInfo(String cargoName, FurnitureInfo furnitureInfoObj)

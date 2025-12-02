@@ -19,9 +19,25 @@ public class Main {
 //
 //         using factory Method
         responseQueue.forEach((JsonObj res) -> {
-            NotificationService.pushNotification(res.getTransportMode(),res.getCargo());
+
 
             FieldMapper fieldMapper= new FieldMapper(res);
+
+            try {
+                if (!fieldMapper.IsSet()) {
+                   fieldMapper.map();
+
+                }
+                else
+                {
+                    throw new Exception("Cant modify this object as it already exists");
+                }
+            }
+            catch(Exception e)
+            {
+                System.out.println(e.getMessage());
+            }
+            NotificationService notificationService= new NotificationService()
 
 
         });

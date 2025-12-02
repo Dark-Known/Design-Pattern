@@ -31,11 +31,13 @@ public class CargoNotificationBuilder implements Builder<CargoInfoNotification>{
 
     @Override
     public Builder<CargoInfoNotification> setUserName(String userName) {
+        notification.setUserName(userName);
         return this;
     }
 
     @Override
     public Builder<CargoInfoNotification> setUserAddress(String userAddress) {
+        notification.setUserAddress(userAddress);
         return this;
     }
 

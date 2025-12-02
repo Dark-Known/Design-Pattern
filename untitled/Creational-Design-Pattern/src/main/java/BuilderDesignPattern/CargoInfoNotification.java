@@ -8,6 +8,8 @@ public class CargoInfoNotification {
     private int distanceInfo;
     private FurnitureInfo furnitureInfo;
     private String cargoName;
+    private String userName;
+    private String userAddress;
 
     public void setTimeStamp(String timeStamp)
     {
@@ -25,5 +27,13 @@ public class CargoInfoNotification {
     public void setDistanceInfo(int distanceInfo)
     {
         this.distanceInfo=distanceInfo;
+    }
+    public void setUserName(String userName)
+    {
+        this.userName=userName;
+    }
+    public void setUserAddress(String userAddress)
+    {
+        this.userAddress=userAddress;
     }
 }
