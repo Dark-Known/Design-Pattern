@@ -1,3 +1,5 @@
+import AbstractFactoryDesignPattern.FurnitureInfo;
+
 public class CargoInfo {
     private final String cargoName;
     private final FurnitureInfo furnitureInfoObj;
