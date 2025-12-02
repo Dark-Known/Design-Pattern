@@ -7,11 +7,37 @@ import FactoryDesignPattern.TransportFactorySelector;
 import FactoryDesignPattern.VehicleFactory;
 
 public class NotificationService {
+    private final String timeStamp;
+    private final String  transportType;
+    private final UserInfo userInfoObj;
+    private final AddressInfo addressInfoObj;
+    private final CargoInfo cargoInfoObj;
+    private final FurnitureInfo furnitureInfoObj;
+    private final int distanceInfo;
+
+    public NotificationService(String timeStamp, String transportType, UserInfo userInfoObj, AddressInfo addressInfoObj, CargoInfo cargoInfoObj, FurnitureInfo furnitureInfoObj, int distanceInfo) {
+        this.timeStamp = timeStamp;
+        this.transportType = transportType;
+        this.userInfoObj = userInfoObj;
+        this.addressInfoObj = addressInfoObj;
+        this.cargoInfoObj = cargoInfoObj;
+        this.furnitureInfoObj = furnitureInfoObj;
+        this.distanceInfo = distanceInfo;
+    }
+
+
     public void pushNotification(String TransportType,String cargoName) {
         try {
             // notify user with their transport type
             VehicleFactory vehiclefactory = TransportFactorySelector.getTransportFactory(TransportType);
             vehiclefactory.notifyUser();
+            CargoInfoNotification cargoNotification=buildCargoNotification(timeStamp,transportType,
+                                                                            distanceInfo,cargoInfoObj);
+            TransportInfoNotification transportNotification= buildTransportNotification(timeStamp,transportType,
+                                                                                        userInfoObj,addressInfoObj);
+
+
+
             // extract furniture name , furniture type
             String furnitureName,furnitureFamilyName;
             String[] tempCargoStrArr=cargoName.split(" ");
@@ -33,13 +59,13 @@ public class NotificationService {
     }
 
     public CargoInfoNotification buildCargoNotification(String timeStamp, String transportType,
-                                                        int distanceInfo , FurnitureInfo cargoInfo)
+                                                        int distanceInfo , CargoInfo cargoInfo)
     {
         Builder<CargoInfoNotification> notificationBuilder= new CargoNotificationBuilder().
                                                                 setTimeStamp(timeStamp).
                                                                 setTransportType(transportType).
                                                                 setDistanceInfo(distanceInfo).
-                                                                setCargoInfo(cargoInfo);
+                                                                setCargoInfo(cargoInfo.getFurnitureInfoObj(), cargoInfo.getCargoName());
         return notificationBuilder.build();
     }
 

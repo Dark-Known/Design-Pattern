@@ -24,7 +24,7 @@ public class TransportNotificationBuilder implements Builder<TransportInfoNotifi
     }
 
     @Override
-    public Builder<TransportInfoNotification> setCargoInfo(FurnitureInfo furnitureInfo) {
+    public Builder<TransportInfoNotification> setCargoInfo(FurnitureInfo furnitureInfo, String cargoName) {
         return this;
     }
 

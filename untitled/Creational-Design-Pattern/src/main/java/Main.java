@@ -16,11 +16,15 @@ public class Main {
                 Arrays.asList(res1, res2, res3)
         );
 
+//
+//         using factory Method
+        responseQueue.forEach((JsonObj res) -> {
+            NotificationService.pushNotification(res.getTransportMode(),res.getCargo());
 
-        // using factory Method
-//        responseQueue.forEach((JsonObj res) -> {
-//            NotificationService.pushNotification(res.getTransportMode(),res.getCargo());
-//        });
+            FieldMapper fieldMapper= new FieldMapper(res);
+
+
+        });
 
 
 
