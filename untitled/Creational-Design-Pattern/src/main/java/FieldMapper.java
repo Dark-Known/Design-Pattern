@@ -27,7 +27,7 @@ public class FieldMapper {
         String[] splitArr = cargoName.split(" ");
         String familyName = splitArr[0];
         mapFurnitureInfoObj(familyName);
-        this.cargoInfoObj= new CargoInfo(jsonObj.getCargo(), furnitureInfoObj);
+        this.cargoInfoObj= new CargoInfo(jsonObj.getTransportMode(), jsonObj.getCargo(), furnitureInfoObj);
     }
 
     private void mapUserInfoObj()

@@ -1,42 +1,31 @@
-import AbstractFactoryDesignPattern.FamilySelector;
-import AbstractFactoryDesignPattern.FurnitureFamilyFactory;
-import AbstractFactoryDesignPattern.FurnitureInfo;
-import AbstractFactoryDesignPattern.FurnitureSelector;
 import BuilderDesignPattern.*;
 import FactoryDesignPattern.TransportFactorySelector;
 import FactoryDesignPattern.VehicleFactory;
 
 public class NotificationService {
     private final String timeStamp;
-    private final String  transportType;
     private final UserInfo userInfoObj;
     private final AddressInfo addressInfoObj;
     private final CargoInfo cargoInfoObj;
 
-    private final int distanceInfo;
-
-    public NotificationService(String timeStamp, int distanceInfo,
-                               String transportType, UserInfo userInfoObj,
+    public NotificationService(String timeStamp,UserInfo userInfoObj,
                                AddressInfo addressInfoObj, CargoInfo cargoInfoObj)
                                 {
         this.timeStamp = timeStamp;
-        this.transportType = transportType;
         this.userInfoObj = userInfoObj;
         this.addressInfoObj = addressInfoObj;
         this.cargoInfoObj = cargoInfoObj;
-        this.distanceInfo = distanceInfo;
     }
 
 
     public void pushNotification() {
         try {
             // notify user with their transport type
-            VehicleFactory vehiclefactory = TransportFactorySelector.getTransportFactory(transportType);
+            VehicleFactory vehiclefactory = TransportFactorySelector.getTransportFactory(cargoInfoObj.getTransportType());
             vehiclefactory.notifyUser();
-            CargoInfoNotification cargoNotification=buildCargoNotification(timeStamp,transportType,
-                                                                            distanceInfo,cargoInfoObj);
-            TransportInfoNotification transportNotification= buildTransportNotification(timeStamp,transportType,
-                                                                                        userInfoObj,addressInfoObj);
+            // build different notifications using their builders
+            CargoInfoNotification cargoNotification=buildCargoNotification();
+            TransportInfoNotification transportNotification= buildTransportNotification();
 
 //
 //            // extract furniture name , furniture type
@@ -59,27 +48,28 @@ public class NotificationService {
 
     }
 
-    public CargoInfoNotification buildCargoNotification(String timeStamp, String transportType,
-                                                        int distanceInfo , CargoInfo cargoInfo)
+    public CargoInfoNotification buildCargoNotification()
     {
         Builder<CargoInfoNotification> notificationBuilder= new CargoNotificationBuilder().
                                                                 setTimeStamp(timeStamp).
-                                                                setTransportType(transportType).
-                                                                setDistanceInfo(distanceInfo).
-                                                                setCargoInfo(cargoInfo.getFurnitureInfoObj(), cargoInfo.getCargoName());
+                                                                setTransportType(cargoInfoObj.getTransportType()).
+                                                                setDistanceInfo(cargoInfoObj.getDistanceInfo()).
+                                                                setCargoInfo(cargoInfoObj.getFurnitureInfoObj(), cargoInfoObj.getCargoName()).
+                                                                setUserAddress(userInfoObj.getUserAddress()).
+                                                                setUserName(userInfoObj.getUserName());
+                ;
         return notificationBuilder.build();
     }
 
-    public TransportInfoNotification buildTransportNotification(String timeStamp,String transportType,
-                                                                UserInfo userInfoObj,AddressInfo addressInfo)
+    public TransportInfoNotification buildTransportNotification()
     {
         Builder<TransportInfoNotification> notificationBuilder = new TransportNotificationBuilder().
                                                                         setTimeStamp(timeStamp).
-                                                                        setTransportType(transportType).
+                                                                        setTransportType(cargoInfoObj.getTransportType()).
                                                                         setUserName(userInfoObj.getUserName()).
                                                                         setUserAddress(userInfoObj.getUserAddress()).
-                                                                        setSourceAddress(addressInfo.getSourceAddress()).
-                                                                        setDestAddress(addressInfo.getDestAddress());
+                                                                        setSourceAddress(addressInfoObj.getSourceAddress()).
+                                                                        setDestAddress(addressInfoObj.getDestAddress());
         return notificationBuilder.build();
     }
 
