@@ -26,4 +26,13 @@ public class FurnitureInfo {
     public String getManfDate(){
         return this.manfDate;
     }
+
+    public String toString(){
+        return " "+'\n'+"{"+'\n'+
+                "Manufacturer Name :"+manfName+'\n'+
+                "Manufacturer Address :"+manfAddress+'\n'+
+                "Manufacture Date :"+manfDate+'\n'+
+                "Material Used :"+materialUsed+'\n'+
+                "}" +'\n';
+    }
 }

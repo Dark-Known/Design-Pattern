@@ -1,3 +1,5 @@
+package org.example;
+
 import AbstractFactoryDesignPattern.FurnitureInfo;
 
 public class CargoInfo {
@@ -31,3 +33,9 @@ public class CargoInfo {
     }
 
 }
+
+
+
+
+
+

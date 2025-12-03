@@ -1,3 +1,5 @@
+package org.example;
+
 import BuilderDesignPattern.*;
 import FactoryDesignPattern.TransportFactorySelector;
 import FactoryDesignPattern.VehicleFactory;
@@ -8,7 +10,7 @@ public class NotificationService {
     private final AddressInfo addressInfoObj;
     private final CargoInfo cargoInfoObj;
 
-    public NotificationService(String timeStamp,UserInfo userInfoObj,
+    public NotificationService(String timeStamp, UserInfo userInfoObj,
                                AddressInfo addressInfoObj, CargoInfo cargoInfoObj)
                                 {
         this.timeStamp = timeStamp;

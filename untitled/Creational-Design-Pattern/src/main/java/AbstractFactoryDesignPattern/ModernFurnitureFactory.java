@@ -5,7 +5,7 @@ import java.time.Instant;
 public class ModernFurnitureFactory extends FurnitureFamilyFactory {
     private final String timeStamp;
 
-    ModernFurnitureFactory()
+    public ModernFurnitureFactory()
     {
         this.timeStamp= Instant.now().toString();
     }

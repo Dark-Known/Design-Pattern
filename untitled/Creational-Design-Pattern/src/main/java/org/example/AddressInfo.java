@@ -1,3 +1,5 @@
+package org.example;
+
 public class AddressInfo {
     private final String sourceAddress;
     private final String destAddress;

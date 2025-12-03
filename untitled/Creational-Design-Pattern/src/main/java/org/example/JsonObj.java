@@ -1,3 +1,5 @@
+package org.example;
+
 public class JsonObj {
     private final String transportMode;
     private final int distance;
@@ -7,9 +9,9 @@ public class JsonObj {
     private final String sourceAddress;
     private final String destAddress;
 
-    JsonObj(String transportMode, int distance, String cargo,
-            String userName, String userAddress,
-            String sourceAddress, String destAddress) {
+    public JsonObj(String transportMode, int distance, String cargo,
+                   String userName, String userAddress,
+                   String sourceAddress, String destAddress) {
         this.transportMode = transportMode;
         this.distance = distance;
         this.cargo = cargo;
