@@ -11,6 +11,7 @@
     <modules>
         <module>Creational-Design-Pattern</module>
         <module>Creational-Design-Pattern</module>
+        <module>Structural-Design-Pattern</module>
     </modules>
 
     <properties>
