@@ -3,7 +3,7 @@ package BuilderDesignPattern;
 import AbstractFactoryDesignPattern.FurnitureInfo;
 
 public class CargoNotificationBuilder implements Builder<CargoInfoNotification>{
-    private CargoInfoNotification notification;
+    private CargoInfoNotification notification=new CargoInfoNotification();
 
     @Override
     public Builder<CargoInfoNotification> reset() {
@@ -24,18 +24,20 @@ public class CargoNotificationBuilder implements Builder<CargoInfoNotification>{
     }
 
     @Override
-    public Builder<CargoInfoNotification> setCargoInfo(FurnitureInfo furnitureInfo) {
-        notification.setCargoInfo(furnitureInfo);
+    public Builder<CargoInfoNotification> setCargoInfo(FurnitureInfo furnitureInfo,String cargoName) {
+        notification.setCargoInfo(furnitureInfo,cargoName);
         return this;
     }
 
     @Override
     public Builder<CargoInfoNotification> setUserName(String userName) {
+        notification.setUserName(userName);
         return this;
     }
 
     @Override
     public Builder<CargoInfoNotification> setUserAddress(String userAddress) {
+        notification.setUserAddress(userAddress);
         return this;
     }
 

@@ -3,7 +3,7 @@ package BuilderDesignPattern;
 import AbstractFactoryDesignPattern.FurnitureInfo;
 
 public class TransportNotificationBuilder implements Builder<TransportInfoNotification> {
-    private TransportInfoNotification notification;
+    private TransportInfoNotification notification=new TransportInfoNotification();
 
     @Override
     public Builder<TransportInfoNotification> reset() {
@@ -24,7 +24,7 @@ public class TransportNotificationBuilder implements Builder<TransportInfoNotifi
     }
 
     @Override
-    public Builder<TransportInfoNotification> setCargoInfo(FurnitureInfo furnitureInfo) {
+    public Builder<TransportInfoNotification> setCargoInfo(FurnitureInfo furnitureInfo, String cargoName) {
         return this;
     }
 
