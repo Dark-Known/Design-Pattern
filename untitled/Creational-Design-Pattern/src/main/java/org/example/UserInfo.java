@@ -1,3 +1,5 @@
+package org.example;
+
 public class UserInfo {
     private final String userName;
     private final String userAddress;

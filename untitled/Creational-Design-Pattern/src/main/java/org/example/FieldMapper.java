@@ -1,9 +1,11 @@
+package org.example;
+
 import AbstractFactoryDesignPattern.FamilySelector;
 import AbstractFactoryDesignPattern.FurnitureInfo;
 
 public class FieldMapper {
-    private  CargoInfo cargoInfoObj;
-    private  AddressInfo addressInfoObj;
+    private CargoInfo cargoInfoObj;
+    private AddressInfo addressInfoObj;
     private  FurnitureInfo furnitureInfoObj;
     private UserInfo userInfoObj;
     private boolean isSet=false;
@@ -11,7 +13,7 @@ public class FieldMapper {
     private final JsonObj jsonObj;
 
 
-    FieldMapper(JsonObj jsonObj)
+    public FieldMapper(JsonObj jsonObj)
     {
        this.jsonObj= jsonObj;
     }
