@@ -2,7 +2,7 @@ package TestForAbstractFactoryDesignPattern;
 
 import AbstractFactoryDesignPattern.FurnitureInfo;
 import AbstractFactoryDesignPattern.ModernFurnitureFactory;
-import org.example.CurrentTimeService;
+import Service.CurrentTimeService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -12,6 +12,12 @@ public class TestForExtractingModernFamilyInfo {
             "silk",date);
     private final ModernFurnitureFactory modernFurnitureFactory= new ModernFurnitureFactory();
     private final FurnitureInfo actualFurnitureInfoObj = modernFurnitureFactory.getFamilyInfo();
+
+
+
+
+
+
     @Test
     void testToVerifyGetManfName(){
         String expectedManfName= expectedFurnitureInfoObj.getManfName();
@@ -45,6 +51,12 @@ public class TestForExtractingModernFamilyInfo {
 
         Assertions.assertEquals(expectedManfDate,actualManfDate);
     }
+//    @Test
+//    void ResultShouldBeFourModernChairUnitsSold(){
+//        Assertions.assertEquals(4 ,);
+//
+//
+//    }
 
 
 

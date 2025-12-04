@@ -2,9 +2,10 @@ package TestForAbstractFactoryDesignPattern;
 
 import AbstractFactoryDesignPattern.FurnitureInfo;
 import AbstractFactoryDesignPattern.VictoriaFurnitureFactory;
-import org.example.CurrentTimeService;
+import Service.CurrentTimeService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+
 
 public class TestForExtractingVictoriaFamilyInfo {
     private final String date = CurrentTimeService.getDate();

@@ -1,4 +1,4 @@
-package org.example;
+package InformationObject;
 
 import AbstractFactoryDesignPattern.FurnitureInfo;
 
@@ -8,7 +8,7 @@ public class CargoInfo {
     private final String transportType;
     private final FurnitureInfo furnitureInfoObj;
 
-    CargoInfo(String transportType, String cargoName,int distanceInfo, FurnitureInfo furnitureInfoObj)
+    public CargoInfo(String transportType, String cargoName, int distanceInfo, FurnitureInfo furnitureInfoObj)
     {
 
         this.cargoName=cargoName;

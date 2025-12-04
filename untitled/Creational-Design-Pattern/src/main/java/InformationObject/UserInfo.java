@@ -1,4 +1,4 @@
-package org.example;
+package InformationObject;
 
 public class UserInfo {
     private final String userName;

@@ -8,8 +8,11 @@
         <outputRelativeToContentRoot value="true" />
         <module name="Creational-Design-Pattern (1)" />
         <module name="Structural-Design-Pattern" />
-        <module name="Creational-Design-Pattern" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="Creational-Design-Pattern" target="22" />
+      <module name="Design-Pattern (1)" target="22" />
+    </bytecodeTargetLevel>
   </component>
 </project>

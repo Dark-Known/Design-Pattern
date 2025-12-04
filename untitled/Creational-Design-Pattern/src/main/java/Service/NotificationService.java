@@ -1,8 +1,11 @@
-package org.example;
+package Service;
 
 import BuilderDesignPattern.*;
 import FactoryDesignPattern.TransportFactorySelector;
 import FactoryDesignPattern.VehicleFactory;
+import InformationObject.AddressInfo;
+import InformationObject.CargoInfo;
+import InformationObject.UserInfo;
 
 public class NotificationService {
     private final String timeStamp;
