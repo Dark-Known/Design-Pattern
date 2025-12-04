@@ -16,7 +16,7 @@ public class VictoriaFurnitureFactory extends FurnitureFamilyFactory{
 
     @Override
     public ISofa createSofa() {
-        return new VictoriaSofa();
+        return new VictoriaSofa() ;
     }
 
     @Override
