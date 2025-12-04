@@ -1,9 +1,6 @@
 package Service;
 
-import AbstractFactoryDesignPattern.FamilySelector;
-import AbstractFactoryDesignPattern.FurnitureFamilyFactory;
-import AbstractFactoryDesignPattern.FurnitureInfo;
-import AbstractFactoryDesignPattern.FurnitureSelector;
+import AbstractFactoryDesignPattern.*;
 import BuilderDesignPattern.*;
 import FactoryDesignPattern.TransportFactorySelector;
 import FactoryDesignPattern.VehicleFactory;
@@ -48,11 +45,23 @@ public class NotificationService {
             // get furniture family using furniture family Selector
             FamilySelector selector= new FamilySelector(furnitureFamilyName);
             FurnitureFamilyFactory familyFactory=selector.getFamilyFactory();
+            ModernFurnitureFactory modernFurnitureFactory=new ModernFurnitureFactory();
+
+            int modernChairCount= modernFurnitureFactory.totalChairSold();
+            int modernSofaCount=modernFurnitureFactory.totalSofaSold();
+            
+            VictoriaFurnitureFactory victoriaFurnitureFactory=new VictoriaFurnitureFactory();
+
+            int victoriaChairCount= victoriaFurnitureFactory.totalChairSold();
+            int victoriaSofaCount = victoriaFurnitureFactory.totalSofaSold();
+
+
 
             // extract furnitureInfo using selector
             FurnitureInfo furnitureInfo= selector.getFamilyInfo();
             // create furniture for specific family using furniture family selector and furniture typeName
             FurnitureSelector furnitureSelector= new FurnitureSelector(furnitureName,familyFactory);
+
             furnitureSelector.getFurniture();
 
         } catch (Exception e) {
