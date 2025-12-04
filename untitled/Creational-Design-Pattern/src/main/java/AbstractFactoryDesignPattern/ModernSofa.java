@@ -4,12 +4,10 @@ import Service.SalesCounterService;
 
 public class ModernSofa implements ISofa{
     static int unitsSold=0;
-    private SalesCounterService counterService;
+
 
     ModernSofa()
     {
-        counterService= new SalesCounterService();
-        counterService.increment();
         ModernSofa.unitsSold=ModernSofa.unitsSold+1;
     }
 

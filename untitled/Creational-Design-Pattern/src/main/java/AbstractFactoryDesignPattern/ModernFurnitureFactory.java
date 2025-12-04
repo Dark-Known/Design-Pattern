@@ -23,7 +23,8 @@ public class ModernFurnitureFactory extends FurnitureFamilyFactory {
 
     }
 
-    public int getChairsSold(){
+    @Override
+    public int totalChairSold() {
         return chairCounterService.getCount();
     }
 
@@ -32,9 +33,12 @@ public class ModernFurnitureFactory extends FurnitureFamilyFactory {
         sofaCounterService.increment();
         return new ModernSofa();
     }
-    public int getSofasSold(){
+
+    @Override
+    public int totalSofaSold() {
         return sofaCounterService.getCount();
     }
+
 
 
     @Override
