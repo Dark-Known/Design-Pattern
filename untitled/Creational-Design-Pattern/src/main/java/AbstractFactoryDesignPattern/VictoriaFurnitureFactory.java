@@ -1,22 +1,39 @@
 package AbstractFactoryDesignPattern;
 
+import InformationObject.CounterServiceRegistry;
+import InformationObject.InMemoryVictoriaFamilyUnits;
+import Service.SalesCounterService;
+
 import java.time.Instant;
 
 public class VictoriaFurnitureFactory extends FurnitureFamilyFactory{
     private final String timeStamp;
-
+    private InMemoryVictoriaFamilyUnits victoriaFamilyUnit= CounterServiceRegistry.getVictoriaFamilyRegistry();
     public VictoriaFurnitureFactory()
     {
         this.timeStamp= Instant.now().toString();
+
     }
     @Override
     public IChair createChair() {
+        victoriaFamilyUnit.incrementChairCount();
         return new VictoriaChair();
     }
 
     @Override
+    public int totalChairSold() {
+        return victoriaFamilyUnit.totalChairSold();
+    }
+
+    @Override
     public ISofa createSofa() {
-        return new VictoriaSofa() ;
+        victoriaFamilyUnit.incrementSofaCount();
+        return new VictoriaSofa();
+    }
+
+    @Override
+    public int totalSofaSold() {
+        return victoriaFamilyUnit.totalSofaSold();
     }
 
     @Override

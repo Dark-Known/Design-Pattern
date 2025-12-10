@@ -1,7 +1,11 @@
 package AbstractFactoryDesignPattern;
 
+import Service.SalesCounterService;
+
 public class ModernSofa implements ISofa{
     static int unitsSold=0;
+
+
     ModernSofa()
     {
         ModernSofa.unitsSold=ModernSofa.unitsSold+1;
