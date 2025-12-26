@@ -3,8 +3,8 @@ package InformationObject;
 import Service.SalesCounterService;
 
 public class InMemoryModernFamilyUnits implements InMemoryUnits {
-    private  SalesCounterService chairCounterService;
-    private  SalesCounterService sofaCounterService;
+    private final  SalesCounterService chairCounterService=new SalesCounterService();
+    private final  SalesCounterService sofaCounterService=new SalesCounterService();
 
     @Override
     public int totalChairSold(){

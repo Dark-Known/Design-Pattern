@@ -1,14 +1,12 @@
 package AbstractFactoryDesignPattern;
 
-import InformationObject.CounterServiceRegistry;
+import InformationObject.UnitsRegistry;
 import InformationObject.InMemoryModernFamilyUnits;
-import Service.SalesCounterService;
 
 import java.time.Instant;
 
 public class ModernFurnitureFactory extends FurnitureFamilyFactory {
     private final String timeStamp;
-    private InMemoryModernFamilyUnits modernFamilyUnit= CounterServiceRegistry.getModernFamilyRegistry();
 
     public ModernFurnitureFactory()
     {
@@ -17,28 +15,16 @@ public class ModernFurnitureFactory extends FurnitureFamilyFactory {
 
     @Override
     public IChair createChair() {
-
-        modernFamilyUnit.incrementChairCount();
         return new ModernChair();
 
     }
 
-    @Override
-    public int totalChairSold() {
-        return modernFamilyUnit.totalChairSold();
-    }
 
     @Override
     public ISofa createSofa() {
-        modernFamilyUnit.incrementSofaCount();
         return new ModernSofa();
     }
 
-    @Override
-    public int totalSofaSold() {
-        modernFamilyUnit.totalSofaSold();
-        return modernFamilyUnit.totalSofaSold();
-    }
 
 
 

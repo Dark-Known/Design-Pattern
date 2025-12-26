@@ -1,3 +1,6 @@
+import InformationObject.InMemoryModernFamilyUnits;
+import InformationObject.InMemoryUnits;
+import InformationObject.InMemoryVictoriaFamilyUnits;
 import Service.CurrentTimeService;
 import Service.FieldMapper;
 import InformationObject.JsonObj;
@@ -37,6 +40,13 @@ public class Main {
         ArrayList<JsonObj> responseQueue = new ArrayList<>(
                 Arrays.asList(res1, res2, res3,res4,res5,res6,res7,res8)
         );
+
+
+
+        // IN Memory Units
+        InMemoryUnits inMemoryModernFamilyUnits= new InMemoryModernFamilyUnits();
+        InMemoryUnits inMemoryVictoriaFamilyUnits= new InMemoryVictoriaFamilyUnits();
+
 
 
 //         using factory Method
