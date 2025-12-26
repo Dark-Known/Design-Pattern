@@ -9,10 +9,33 @@ public class FurnitureInfo {
 
     public FurnitureInfo(String manfName, String manfAddress,
                          String materialUsed, String manfDate) {
+
+        validateManfName(manfName);
+        validateManfAddress(manfAddress);
+        validateMaterialUsed(materialUsed);
         this.manfName = manfName;
         this.manfAddress = manfAddress;
         this.materialUsed = materialUsed;
         this.manfDate = manfDate;
+    }
+
+    private void validateManfName(String manfName){
+        if(manfName.isEmpty())
+        {
+            throw new IllegalStateException("Invalid Manufacturer name");
+        }
+    }
+    private void validateManfAddress(String manfAddress){
+        if(manfAddress.isEmpty())
+        {
+            throw new IllegalStateException("Invalid Manufacturer Address");
+        }
+    }
+    private void validateMaterialUsed(String materialUsed){
+        if(manfName.isEmpty())
+        {
+            throw new IllegalStateException("Invalid Material Used");
+        }
     }
     public String getManfName(){
         return this.manfName;

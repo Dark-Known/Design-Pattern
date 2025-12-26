@@ -67,13 +67,28 @@ public class CargoNotificationBuilder implements Builder<CargoInfoNotification>{
 
     private void validateTransportType()
     {
+        if(transportType.isEmpty())
+        {
+            throw new IllegalStateException("Transport Type cannot be null");
+        }
 
     }
     private void validateDistanceInfo()
     {
+        if(distanceInfo<10)
+        {
+            throw new IllegalStateException("Invalid distance Info");
+        }
 
     }
-    private void validate
+    private void validateFurnitureInfo()
+    {
+
+
+    }
+    private void validateCargoName(){
+
+    }
 
     private void validateUserName()
     {
