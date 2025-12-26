@@ -1,43 +1,51 @@
 package BuilderDesignPattern;
 
 import AbstractFactoryDesignPattern.FurnitureInfo;
+import AbstractFactoryDesignPattern.FurnitureSelector;
 
 public class CargoNotificationBuilder implements Builder<CargoInfoNotification>{
-    private CargoInfoNotification notification=new CargoInfoNotification();
+    private String transportType;
+    private int distanceInfo;
+    private FurnitureInfo furnitureInfo;
+    private String cargoName;
+    private String userName;
+    private String userAddress;
+    private String timeStamp;
 
-    @Override
-    public Builder<CargoInfoNotification> reset() {
-        notification = new CargoInfoNotification();
-        return this;
-    }
+//    @Override
+//    public Builder<CargoInfoNotification> reset() {
+//        new CargoInfoNotification();
+//        return this;
+//    }
 
     @Override
     public Builder<CargoInfoNotification> setTransportType(String transportType) {
-        notification.setTransportType(transportType);
+        this.transportType=transportType;
         return this;
     }
 
     @Override
     public Builder<CargoInfoNotification> setDistanceInfo(int distanceInfo) {
-        notification.setDistanceInfo(distanceInfo);
+        this.distanceInfo=distanceInfo;
         return this;
     }
 
     @Override
     public Builder<CargoInfoNotification> setCargoInfo(FurnitureInfo furnitureInfo,String cargoName) {
-        notification.setCargoInfo(furnitureInfo,cargoName);
+        this.furnitureInfo=furnitureInfo;
+        this.cargoName=cargoName;
         return this;
     }
 
     @Override
     public Builder<CargoInfoNotification> setUserName(String userName) {
-        notification.setUserName(userName);
+        this.userName=userName;
         return this;
     }
 
     @Override
     public Builder<CargoInfoNotification> setUserAddress(String userAddress) {
-        notification.setUserAddress(userAddress);
+        this.userAddress=userAddress;
         return this;
     }
 
@@ -53,9 +61,29 @@ public class CargoNotificationBuilder implements Builder<CargoInfoNotification>{
 
     @Override
     public Builder<CargoInfoNotification> setTimeStamp(String timeStamp) {
-        notification.setTimeStamp(timeStamp);
+        this.timeStamp=timeStamp;
         return this;
     }
+
+    private void validateTransportType()
+    {
+
+    }
+    private void validateDistanceInfo()
+    {
+
+    }
+    private void validate
+
+    private void validateUserName()
+    {
+
+    }
+    private void validateUserAddress()
+    {
+
+    }
+
 
     public CargoInfoNotification build(){
         return notification;
