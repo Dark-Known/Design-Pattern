@@ -81,26 +81,45 @@ public class CargoNotificationBuilder implements Builder<CargoInfoNotification>{
         }
 
     }
-    private void validateFurnitureInfo()
+    private void validateCargoName()
     {
-
-
-    }
-    private void validateCargoName(){
-
+        if(cargoName.isEmpty())
+        {
+            throw new IllegalStateException("Invalid Cargo Name");
+        }
     }
 
     private void validateUserName()
     {
+        if(userName.isEmpty())
+        {
+            throw new IllegalStateException("Invalid User Name");
+        }
 
     }
     private void validateUserAddress()
     {
+        if(userAddress.isEmpty())
+        {
+            throw new IllegalStateException("Invalid User Address");
+        }
 
     }
 
 
     public CargoInfoNotification build(){
+        validateTransportType();
+        validateDistanceInfo();
+        validateCargoName();
+        validateUserName();
+        validateUserAddress();
+        CargoInfoNotification notification = new CargoInfoNotification();
+        notification.setTransportType(this.transportType);
+        notification.setDistanceInfo(this.distanceInfo);
+        notification.setCargoInfo(this.furnitureInfo,this.cargoName);
+        notification.setUserName(this.userName);
+        notification.setUserAddress(this.userAddress);
+        notification.setTimeStamp(this.timeStamp);
         return notification;
     }
 }
