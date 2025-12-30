@@ -39,6 +39,6 @@ public class FurnitureSelector {
     }
     public void setFurnitureInfoObj(){
 
-w
+
     }
 }

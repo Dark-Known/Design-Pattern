@@ -2,15 +2,23 @@ package Service;
 
 import InformationObject.CargoInfo;
 import InformationObject.InMemoryModernFamilyUnits;
+import InformationObject.InMemoryUnits;
 import InformationObject.InMemoryVictoriaFamilyUnits;
 
 public class StorageService {
-    private CargoInfo cargoInfo;
 
-    StorageService(CargoInfo cargoInfo)
+    private InMemoryUnits inMemoryUnit;
+
+    StorageService(InMemoryUnits inMemoryUnit)
     {
-        this.cargoInfo=cargoInfo;
+        this.inMemoryUnit=inMemoryUnit;
     }
+
+    public void incrementUnit()
+    {
+        inMemoryUnit.
+    }
+
 
 
 }

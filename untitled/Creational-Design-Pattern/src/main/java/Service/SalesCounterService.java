@@ -15,4 +15,5 @@ public class SalesCounterService implements ICounter {
         return counter;
 
     }
+
 }
