@@ -20,7 +20,9 @@ public class FamilySelector {
         FurnitureFamilyFactory getFamilyFactory()
         {
             return this.furnitureFamilyFactory;
+
         }
+
     }
     public FamilySelector(String familyName)
     {
@@ -35,6 +37,13 @@ public class FamilySelector {
 
     public  FurnitureFamilyFactory getFamilyFactory()
     {
-        return FamilyEnum.getFamilyType(familyName.toUpperCase()).getFamilyFactory();
+        try {
+            return FamilyEnum.getFamilyType(familyName.toUpperCase()).getFamilyFactory();
+        }
+        catch(IllegalStateException e)
+        {
+            throw new IllegalStateException("Family Name invalid");
+        }
     }
+
 }

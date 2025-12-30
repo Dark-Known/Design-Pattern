@@ -1,22 +1,22 @@
 package Service;
 
-import InformationObject.CargoInfo;
-import InformationObject.InMemoryModernFamilyUnits;
 import InformationObject.InMemoryUnits;
-import InformationObject.InMemoryVictoriaFamilyUnits;
 
 public class StorageService {
 
+    private String cargoName;
+
     private InMemoryUnits inMemoryUnit;
 
-    StorageService(InMemoryUnits inMemoryUnit)
+    StorageService(InMemoryUnits inMemoryUnit, String furnitureName)
     {
         this.inMemoryUnit=inMemoryUnit;
+        this.cargoName= furnitureName;
     }
 
     public void incrementUnit()
     {
-        inMemoryUnit.
+        this.inMemoryUnit.
     }
 
 

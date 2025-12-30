@@ -1,5 +1,6 @@
 package InformationObject;
 
+import Service.ICounter;
 import Service.SalesCounterService;
 
 public class InMemoryModernFamilyUnits implements InMemoryUnits {
@@ -14,6 +15,18 @@ public class InMemoryModernFamilyUnits implements InMemoryUnits {
     public int totalSofaSold(){
         return sofaCounterService.getCount();
     }
+
+    @Override
+    public ICounter getChairCounter() {
+        return this.chairCounterService;
+    }
+
+    @Override
+    public ICounter getSofaCounter() {
+        return this.sofaCounterService;
+    }
+
+
     @Override
     public void incrementChairCount(){
         chairCounterService.increment();
@@ -22,5 +35,6 @@ public class InMemoryModernFamilyUnits implements InMemoryUnits {
     public void incrementSofaCount(){
         sofaCounterService.increment();
     }
+
 
 }

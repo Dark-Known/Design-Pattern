@@ -33,8 +33,14 @@ public class FurnitureSelector {
 
 
     public Object getFurniture(){
-        MethodSelectorEnum selector= MethodSelectorEnum.valueOf(furnitureName.toUpperCase());
-        return selector.getMethod(familyFactory);
+        try {
+            MethodSelectorEnum selector = MethodSelectorEnum.valueOf(furnitureName.toUpperCase());
+            return selector.getMethod(familyFactory);
+        }
+        catch (IllegalStateException e)
+        {
+            throw new IllegalStateException("Invalid furniture name");
+        }
 
     }
     public void setFurnitureInfoObj(){

@@ -33,6 +33,12 @@ public class RegistrySelector {
     // Retrieve method signature from enum method selector
     public InMemoryUnits getMemoryUnit(String familyName)
     {
-        return InMemoryFamilySelector.valueOf(familyName).getMethod(unitsRegistry);
+        try {
+            return InMemoryFamilySelector.valueOf(familyName).getMethod(unitsRegistry);
+        }
+        catch(IllegalStateException e)
+        {
+            throw new IllegalStateException("Family Name invalid");
+        }
     }
 }
