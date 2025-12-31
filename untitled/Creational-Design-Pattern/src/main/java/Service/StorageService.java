@@ -5,7 +5,7 @@ import InformationObject.InMemoryFamilyUnits;
 
 public class StorageService {
     FamilyRegistry familyRegistry;
-    StorageService(FamilyRegistry familyRegistry)
+    public StorageService(FamilyRegistry familyRegistry)
     {
         this.familyRegistry=familyRegistry;
     }

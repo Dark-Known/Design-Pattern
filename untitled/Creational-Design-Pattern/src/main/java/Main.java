@@ -1,9 +1,8 @@
-import InformationObject.FamilyInfoEnum;
-import InformationObject.InMemoryFamilyUnits;
+import InformationObject.*;
 import Service.CurrentTimeService;
 import Service.FieldMapper;
-import InformationObject.JsonObj;
 import Service.NotificationService;
+import Service.StorageService;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -51,9 +50,8 @@ public class Main {
         // IN Memory Units
 //        InMemoryFamilyUnits inMemoryModernFamilyUnits= new InMemoryModernFamilyUnits();
 //        InMemoryFamilyUnits inMemoryVictoriaFamilyUnits= new InMemoryVictoriaFamilyUnits();
-
-
-
+        FamilyRegistry familyRegistry= new FamilyRegistry();
+        StorageService storage= new StorageService(familyRegistry);
 //         using factory Method
         responseQueue.forEach((JsonObj res) -> {
             // extract info from jsonObjs and distribute to individual information objs
@@ -65,6 +63,12 @@ public class Main {
                 NotificationService notificationService= new NotificationService(timeStamp,fieldMapper.getUserInfoObj(),
                         fieldMapper.getAddressInfoObj(),fieldMapper.getCargoInfoObj());
                 notificationService.pushNotification();
+                //Extract cargo info from fieldMapper
+
+                CargoInfo cargoInfoObj= fieldMapper.getCargoInfoObj();
+                String cargoName= cargoInfoObj.getCargoName();
+
+
             }
             catch(Exception e)
             {
