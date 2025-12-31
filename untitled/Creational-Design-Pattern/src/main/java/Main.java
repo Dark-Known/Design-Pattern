@@ -66,7 +66,10 @@ public class Main {
                 //Extract cargo info from fieldMapper
 
                 CargoInfo cargoInfoObj= fieldMapper.getCargoInfoObj();
-                String cargoName= cargoInfoObj.getCargoName();
+                String familyName= cargoInfoObj.getFamilyName();
+                String furnitureType= cargoInfoObj.getFurnitureName();
+                storage.increment(familyName,furnitureType);
+
 
 
             }
@@ -77,10 +80,7 @@ public class Main {
 
 
 
-
         });
-
-
 
 
 
