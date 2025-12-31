@@ -45,15 +45,6 @@ public class NotificationService {
             // get furniture family using furniture family Selector
             FamilySelector selector= new FamilySelector(furnitureFamilyName);
             FurnitureFamilyFactory familyFactory=selector.getFamilyFactory();
-            ModernFurnitureFactory modernFurnitureFactory=new ModernFurnitureFactory();
-
-            int modernChairCount= modernFurnitureFactory.totalChairSold();
-            int modernSofaCount=modernFurnitureFactory.totalSofaSold();
-            
-            VictoriaFurnitureFactory victoriaFurnitureFactory=new VictoriaFurnitureFactory();
-
-            int victoriaChairCount= victoriaFurnitureFactory.totalChairSold();
-            int victoriaSofaCount = victoriaFurnitureFactory.totalSofaSold();
 
 
 

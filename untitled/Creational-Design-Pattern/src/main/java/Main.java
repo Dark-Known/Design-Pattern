@@ -1,6 +1,5 @@
-import InformationObject.InMemoryModernFamilyUnits;
-import InformationObject.InMemoryUnits;
-import InformationObject.InMemoryVictoriaFamilyUnits;
+import InformationObject.FamilyInfoEnum;
+import InformationObject.InMemoryFamilyUnits;
 import Service.CurrentTimeService;
 import Service.FieldMapper;
 import InformationObject.JsonObj;
@@ -10,6 +9,12 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Main {
+    private enum TesterEnum{
+        MODERN,
+        VICTORIA,
+        CHAIR,
+        SOFA
+    }
     public static void main(String[] args) {
         // after some server side ops we get jsonObj
         JsonObj res1 = new JsonObj("Road", 500, "modern chair",
@@ -44,8 +49,8 @@ public class Main {
 
 
         // IN Memory Units
-        InMemoryUnits inMemoryModernFamilyUnits= new InMemoryModernFamilyUnits();
-        InMemoryUnits inMemoryVictoriaFamilyUnits= new InMemoryVictoriaFamilyUnits();
+//        InMemoryFamilyUnits inMemoryModernFamilyUnits= new InMemoryModernFamilyUnits();
+//        InMemoryFamilyUnits inMemoryVictoriaFamilyUnits= new InMemoryVictoriaFamilyUnits();
 
 
 
@@ -54,7 +59,6 @@ public class Main {
             // extract info from jsonObjs and distribute to individual information objs
             FieldMapper fieldMapper= new FieldMapper(res);
             String timeStamp= CurrentTimeService.getNow();
-
 
             try {
                 fieldMapper.map();

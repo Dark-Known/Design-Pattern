@@ -1,23 +1,27 @@
 package Service;
 
-import InformationObject.InMemoryUnits;
+import InformationObject.FamilyRegistry;
+import InformationObject.InMemoryFamilyUnits;
 
 public class StorageService {
-
-    private String cargoName;
-
-    private InMemoryUnits inMemoryUnit;
-
-    StorageService(InMemoryUnits inMemoryUnit, String furnitureName)
+    FamilyRegistry familyRegistry;
+    StorageService(FamilyRegistry familyRegistry)
     {
-        this.inMemoryUnit=inMemoryUnit;
-        this.cargoName= furnitureName;
+        this.familyRegistry=familyRegistry;
     }
 
-    public void incrementUnit()
+    public void increment(String familyName, String furnitureType)
     {
-        this.inMemoryUnit.
+        InMemoryFamilyUnits family= familyRegistry.getFamily(familyName);
+        family.incrementUnit(furnitureType);
     }
+    public int getSoldUnits(String familyName, String furnitureType)
+    {
+        InMemoryFamilyUnits family= familyRegistry.getFamily(familyName);
+        return family.getTotalUnitSold(furnitureType);
+    }
+
+
 
 
 

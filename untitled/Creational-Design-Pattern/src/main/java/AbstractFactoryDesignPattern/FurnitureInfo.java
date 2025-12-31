@@ -32,7 +32,7 @@ public class FurnitureInfo {
         }
     }
     private void validateMaterialUsed(String materialUsed){
-        if(manfName.isEmpty())
+        if(materialUsed.isEmpty())
         {
             throw new IllegalStateException("Invalid Material Used");
         }

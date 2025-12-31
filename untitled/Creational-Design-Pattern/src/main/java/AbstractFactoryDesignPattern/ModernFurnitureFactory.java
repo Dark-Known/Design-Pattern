@@ -1,8 +1,5 @@
 package AbstractFactoryDesignPattern;
 
-import InformationObject.UnitsRegistry;
-import InformationObject.InMemoryModernFamilyUnits;
-
 import java.time.Instant;
 
 public class ModernFurnitureFactory extends FurnitureFamilyFactory {
