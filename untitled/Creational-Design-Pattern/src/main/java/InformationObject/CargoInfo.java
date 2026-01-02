@@ -1,4 +1,4 @@
-package org.example;
+package InformationObject;
 
 import AbstractFactoryDesignPattern.FurnitureInfo;
 
@@ -8,7 +8,7 @@ public class CargoInfo {
     private final String transportType;
     private final FurnitureInfo furnitureInfoObj;
 
-    CargoInfo(String transportType, String cargoName,int distanceInfo, FurnitureInfo furnitureInfoObj)
+    public CargoInfo(String transportType, String cargoName, int distanceInfo, FurnitureInfo furnitureInfoObj)
     {
 
         this.cargoName=cargoName;
@@ -30,6 +30,17 @@ public class CargoInfo {
     public int getDistanceInfo()
     {
         return this.distanceInfo;
+    }
+    public String getFamilyName(){
+        // Get Family Name from cargo Name
+        // Need to improve robust way to extract family and furniture name"
+        String[] tempSplitArr = cargoName.split(" ");
+        return tempSplitArr[0];
+
+    }
+    public String getFurnitureName(){
+        String[] tempSplitArr = cargoName.split(" ");
+        return tempSplitArr[1];
     }
 
 }

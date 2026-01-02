@@ -1,8 +1,12 @@
-package org.example;
+package Service;
 
+import AbstractFactoryDesignPattern.*;
 import BuilderDesignPattern.*;
 import FactoryDesignPattern.TransportFactorySelector;
 import FactoryDesignPattern.VehicleFactory;
+import InformationObject.AddressInfo;
+import InformationObject.CargoInfo;
+import InformationObject.UserInfo;
 
 public class NotificationService {
     private final String timeStamp;
@@ -31,21 +35,6 @@ public class NotificationService {
 
             System.out.println("cargo :"+cargoNotification.toString());
             System.out.println("Transport :"+transportNotification.toString());
-
-//
-//            // extract furniture name , furniture type
-//            String furnitureName,furnitureFamilyName;
-//            String[] tempCargoStrArr=cargoName.split(" ");
-//            furnitureName=tempCargoStrArr[1];
-//            furnitureFamilyName=tempCargoStrArr[0];
-//            // get furniture family using furniture vehiclefactory
-//            FamilySelector selector= new FamilySelector(furnitureFamilyName);
-//            FurnitureFamilyFactory familyFactory=selector.getFamilyFactory();
-//            // extract furnitureInfo using selector
-//            FurnitureInfo furnitureInfo= selector.getFamilyInfo();
-//            // create furniture for specific family using furniture vehiclefactory and furniture typeName
-//            FurnitureSelector furnitureSelector= new FurnitureSelector(furnitureName,familyFactory);
-//            furnitureSelector.getFurniture();
 
         } catch (Exception e) {
             System.err.println(e.getMessage());

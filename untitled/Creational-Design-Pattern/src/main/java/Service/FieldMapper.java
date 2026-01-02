@@ -1,7 +1,11 @@
-package org.example;
+package Service;
 
 import AbstractFactoryDesignPattern.FamilySelector;
 import AbstractFactoryDesignPattern.FurnitureInfo;
+import InformationObject.AddressInfo;
+import InformationObject.CargoInfo;
+import InformationObject.JsonObj;
+import InformationObject.UserInfo;
 
 public class FieldMapper {
     private CargoInfo cargoInfoObj;
@@ -59,19 +63,31 @@ public class FieldMapper {
 
     }
 
-    public UserInfo getUserInfoObj(){
+    private void checkSetStatus() throws IllegalAccessException
+    {
+        if(!isSet)
+        {
+            throw new IllegalAccessException("Use map() to map fields before accessing fields");
+        }
+    }
+
+    public UserInfo getUserInfoObj() throws IllegalAccessException {
+        checkSetStatus();
         return this.userInfoObj;
     }
-    public AddressInfo getAddressInfoObj()
-    {
+    public AddressInfo getAddressInfoObj() throws IllegalAccessException {
+        checkSetStatus();
+
         return this.addressInfoObj;
     }
-    public CargoInfo getCargoInfoObj()
-    {
+    public CargoInfo getCargoInfoObj() throws IllegalAccessException {
+        checkSetStatus();
+
         return this.cargoInfoObj;
     }
-    public FurnitureInfo getFurnitureInfoObj()
-    {
+    public FurnitureInfo getFurnitureInfoObj() throws IllegalAccessException {
+        checkSetStatus();
+
         return this.furnitureInfoObj;
     }
 

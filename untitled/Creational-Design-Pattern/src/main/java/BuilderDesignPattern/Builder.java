@@ -3,7 +3,7 @@ package BuilderDesignPattern;
 import AbstractFactoryDesignPattern.FurnitureInfo;
 
 public interface Builder<T> {
-    public Builder<T> reset();
+//    public Builder<T> reset();
     public Builder<T> setTransportType(String transportType);
     public Builder<T> setDistanceInfo(int distanceInfo);
     public Builder<T> setCargoInfo(FurnitureInfo furnitureInfo,String cargoName);

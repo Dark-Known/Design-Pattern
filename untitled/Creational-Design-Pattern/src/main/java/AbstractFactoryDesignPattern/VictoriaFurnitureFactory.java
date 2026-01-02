@@ -4,20 +4,24 @@ import java.time.Instant;
 
 public class VictoriaFurnitureFactory extends FurnitureFamilyFactory{
     private final String timeStamp;
-
     public VictoriaFurnitureFactory()
     {
         this.timeStamp= Instant.now().toString();
+
     }
     @Override
     public IChair createChair() {
         return new VictoriaChair();
     }
 
+
+
     @Override
     public ISofa createSofa() {
         return new VictoriaSofa();
     }
+
+
 
     @Override
     public FurnitureInfo getFamilyInfo() {
