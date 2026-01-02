@@ -32,4 +32,16 @@ public class TestForFamilySelector {
 
 
     }
+    @Test
+    void ResultShouldBeInvalidFamilyName(){
+        IllegalArgumentException exception=Assertions.assertThrows(
+                IllegalArgumentException.class ,
+                ()->{FamilySelector familySelector= new FamilySelector("Flix");
+                    familySelector.getFamilyFactory();}
+        );
+
+        Assertions.assertEquals("Family Name invalid",exception.getMessage());
+
+
+    }
 }

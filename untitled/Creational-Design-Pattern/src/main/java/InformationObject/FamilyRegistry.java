@@ -22,8 +22,8 @@ public class FamilyRegistry {
         try {
             FamilyInfoEnum.valueOf(familyName.toUpperCase());
         }
-        catch(IllegalStateException e) {
-            throw new IllegalStateException("Invalid family Name");
+        catch(IllegalArgumentException e) {
+            throw new IllegalArgumentException("Invalid family Name");
         }
 
     }

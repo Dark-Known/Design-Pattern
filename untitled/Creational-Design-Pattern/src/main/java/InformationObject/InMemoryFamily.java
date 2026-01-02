@@ -19,29 +19,34 @@ public class InMemoryFamily implements InMemoryFamilyUnits{
     }
     @Override
     public void incrementUnit(String furnitureType) {
-        try {
+
+            isValid(furnitureType);
             FurnitureInfoEnum furnitureName = FurnitureInfoEnum.valueOf(furnitureType.toUpperCase());
             ICounter counter = furnitureCounterRegistry.get(furnitureName);
             counter.increment();
-        }
-        catch(IllegalStateException e)
-        {
-            throw new IllegalStateException("Invalid Counter Type");
-        }
+
+
 
     }
 
     @Override
     public int getTotalUnitSold(String furnitureType) {
-        try {
+        isValid(furnitureType);
             FurnitureInfoEnum furnitureName = FurnitureInfoEnum.valueOf(furnitureType.toUpperCase());
             ICounter counter = furnitureCounterRegistry.get(furnitureName);
             return counter.getCount();
-        }
-        catch(IllegalStateException e)
-        {
-            throw new IllegalStateException("Invalid Counter Type");
-        }
 
+
+    }
+
+    private void isValid(String furnitureType)
+    {
+        try{
+            FurnitureInfoEnum furnitureName = FurnitureInfoEnum.valueOf(furnitureType.toUpperCase());
+        }
+        catch(IllegalArgumentException e)
+        {
+            throw new IllegalArgumentException("Invalid Furniture Type");
+        }
     }
 }

@@ -4,4 +4,11 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("Hello world!");
     }
+    //
+//    @BeforeEach
+//    void setUpStorage(){
+//        familyRegistry= new FamilyRegistry();
+//        storageService=new StorageService(familyRegistry);
+//
+//    }
 }
