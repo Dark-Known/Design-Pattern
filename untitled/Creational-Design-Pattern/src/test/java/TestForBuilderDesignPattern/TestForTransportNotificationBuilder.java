@@ -8,13 +8,6 @@ import org.junit.jupiter.api.Test;
 
 public class TestForTransportNotificationBuilder {
     TransportNotificationBuilder notificationBuilder ;
-
-    private String transportType;
-    private int distanceInfo;
-    private String userName;
-    private String userAddress;
-    private String sourceAddress;
-    private String destAddress;
     private String timeStamp;
 
     @BeforeEach
@@ -48,7 +41,7 @@ public class TestForTransportNotificationBuilder {
         String sourceAddress="sourceAddress1";
         String destAddress="destAddress1";
         IllegalStateException exception= Assertions.assertThrows(IllegalStateException.class,()->{
-            notificationBuilder.setTransportType(transportType).setDistanceInfo(distanceInfo).
+            notificationBuilder.setDistanceInfo(distanceInfo).
                     setUserName(userName).setUserAddress(userAddress).setSourceAddress(sourceAddress).
                     setDestAddress(destAddress).setTimeStamp(timeStamp).build();});
 
@@ -93,13 +86,12 @@ public class TestForTransportNotificationBuilder {
     void resultShouldBeInvalidUserNameWithNullAsUserName(){
         String transportType="Transport 1";
         int distanceInfo=11;
-
         String userAddress= "userAddress1";
         String sourceAddress="sourceAddress1";
         String destAddress="destAddress1";
         IllegalStateException exception= Assertions.assertThrows(IllegalStateException.class,()->{
             notificationBuilder.setTransportType(transportType).setDistanceInfo(distanceInfo).
-                    setUserName(userName).setUserAddress(userAddress).setSourceAddress(sourceAddress).
+                    setUserAddress(userAddress).setSourceAddress(sourceAddress).
                     setDestAddress(destAddress).setTimeStamp(timeStamp).build();});
 
         Assertions.assertEquals("Invalid User Name",exception.getMessage());
@@ -132,7 +124,7 @@ public class TestForTransportNotificationBuilder {
         String destAddress="destAddress1";
         IllegalStateException exception= Assertions.assertThrows(IllegalStateException.class,()->{
             notificationBuilder.setTransportType(transportType).setDistanceInfo(distanceInfo).
-                    setUserName(userName).setUserAddress(userAddress).setSourceAddress(sourceAddress).
+                    setUserName(userName).setSourceAddress(sourceAddress).
                     setDestAddress(destAddress).setTimeStamp(timeStamp).build();});
 
         Assertions.assertEquals("Invalid User Address",exception.getMessage());
@@ -164,7 +156,7 @@ public class TestForTransportNotificationBuilder {
         String destAddress="destAddress1";
         IllegalStateException exception= Assertions.assertThrows(IllegalStateException.class,()->{
             notificationBuilder.setTransportType(transportType).setDistanceInfo(distanceInfo).
-                    setUserName(userName).setUserAddress(userAddress).setSourceAddress(sourceAddress).
+                    setUserName(userName).setUserAddress(userAddress).
                     setDestAddress(destAddress).setTimeStamp(timeStamp).build();});
 
         Assertions.assertEquals("Invalid Source Address",exception.getMessage());
@@ -196,8 +188,7 @@ public class TestForTransportNotificationBuilder {
         String sourceAddress="sourceAddress1";
         IllegalStateException exception= Assertions.assertThrows(IllegalStateException.class,()->{
             notificationBuilder.setTransportType(transportType).setDistanceInfo(distanceInfo).
-                    setUserName(userName).setUserAddress(userAddress).setSourceAddress(sourceAddress).
-                    setDestAddress(destAddress).setTimeStamp(timeStamp).build();});
+                    setUserName(userName).setUserAddress(userAddress).setSourceAddress(sourceAddress).setTimeStamp(timeStamp).build();});
 
         Assertions.assertEquals("Invalid Destination Address",exception.getMessage());
 
