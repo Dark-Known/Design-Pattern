@@ -7,8 +7,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class TestForStorageService {
-    private  StorageService storageService;
     private  FamilyRegistry familyRegistry;
+    private  StorageService storageService;
 
     @BeforeEach
     void setUpStorage(){
@@ -60,6 +60,28 @@ public class TestForStorageService {
         storageService.increment(familyName,furnitureType);
         storageService.increment(familyName,furnitureType);
         Assertions.assertEquals(4,storageService.getSoldUnits(familyName,furnitureType));
+
+    }
+
+    @Test
+    void shouldReturnInvalidFamilyName(){
+        String familyName= "Flix";
+        String furnitureType= "sofa";
+
+        IllegalArgumentException exception=Assertions.assertThrows(IllegalArgumentException.class,
+                ()->{storageService.increment(familyName,furnitureType);});
+        Assertions.assertEquals("Invalid family Name",exception.getMessage());
+
+    }
+
+    @Test
+    void shouldReturnInvalidFurnitureType(){
+        String familyName= "Victoria";
+        String furnitureType= "Car";
+
+        IllegalArgumentException exception=Assertions.assertThrows(IllegalArgumentException.class,
+                ()->{storageService.increment(familyName,furnitureType);});
+        Assertions.assertEquals("Invalid Furniture Type",exception.getMessage());
 
     }
 }

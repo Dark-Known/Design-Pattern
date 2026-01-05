@@ -15,7 +15,13 @@ public class FamilySelector {
         }
         static FamilyEnum getFamilyType(String familyName)
         {
-            return FamilyEnum.valueOf(familyName);
+            try{
+            return FamilyEnum.valueOf(familyName);}
+
+            catch(IllegalArgumentException e)
+            {
+                throw new IllegalArgumentException("Family Name invalid");
+            }
         }
         FurnitureFamilyFactory getFamilyFactory()
         {
@@ -37,13 +43,8 @@ public class FamilySelector {
 
     public  FurnitureFamilyFactory getFamilyFactory()
     {
-        try {
+
             return FamilyEnum.getFamilyType(familyName.toUpperCase()).getFamilyFactory();
-        }
-        catch(IllegalStateException e)
-        {
-            throw new IllegalStateException("Family Name invalid");
-        }
     }
 
 }
