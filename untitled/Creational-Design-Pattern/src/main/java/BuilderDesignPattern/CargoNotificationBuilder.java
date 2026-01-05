@@ -66,9 +66,9 @@ public class CargoNotificationBuilder implements Builder<CargoInfoNotification>{
 
     private void validateTransportType()
     {
-        if(transportType.isEmpty())
+        if(transportType==null ||transportType.trim().isEmpty())
         {
-            throw new IllegalStateException("Transport Type cannot be null");
+            throw new IllegalStateException("Invalid Transport Type");
         }
 
     }
@@ -82,15 +82,21 @@ public class CargoNotificationBuilder implements Builder<CargoInfoNotification>{
     }
     private void validateCargoName()
     {
-        if(cargoName.isEmpty())
+        if(cargoName==null || cargoName.trim().isEmpty())
         {
             throw new IllegalStateException("Invalid Cargo Name");
+        }
+    }
+    private void validateFurnitureInfo(){
+        if(furnitureInfo==null)
+        {
+            throw new IllegalStateException("Invalid Furniture Information");
         }
     }
 
     private void validateUserName()
     {
-        if(userName.isEmpty())
+        if(userName==null || userName.trim().isEmpty())
         {
             throw new IllegalStateException("Invalid User Name");
         }
@@ -98,20 +104,29 @@ public class CargoNotificationBuilder implements Builder<CargoInfoNotification>{
     }
     private void validateUserAddress()
     {
-        if(userAddress.isEmpty())
+        if(userAddress==null || userAddress.trim().isEmpty())
         {
             throw new IllegalStateException("Invalid User Address");
         }
 
     }
+    private void validateTimeStamp(){
+        if(timeStamp==null || timeStamp.trim().isEmpty())
+        {
+            throw new IllegalStateException("Invalid Time Stamp");
+        }
+    }
+
 
 
     public CargoInfoNotification build(){
         validateTransportType();
         validateDistanceInfo();
         validateCargoName();
+        validateFurnitureInfo();
         validateUserName();
         validateUserAddress();
+        validateTimeStamp();
         CargoInfoNotification notification = new CargoInfoNotification();
         notification.setTransportType(this.transportType);
         notification.setDistanceInfo(this.distanceInfo);

@@ -113,6 +113,13 @@ public class TransportNotificationBuilder implements Builder<TransportInfoNotifi
             throw new IllegalStateException("Invalid Destination Address");
         }
     }
+
+    private void validateTimeStamp(){
+        if(timeStamp==null || timeStamp.trim().isEmpty())
+        {
+            throw new IllegalStateException("Invalid Time Stamp");
+        }
+    }
     public TransportInfoNotification build(){
         validateTransportType();
         validateDistanceInfo();
@@ -120,6 +127,7 @@ public class TransportNotificationBuilder implements Builder<TransportInfoNotifi
         validateUserAddress();
         validateSourceAddress();
         validateDestAddress();
+        validateTimeStamp();
         TransportInfoNotification notification=new TransportInfoNotification();
         notification.setTransportType(this.transportType);
         notification.setDistanceInfo(this.distanceInfo);

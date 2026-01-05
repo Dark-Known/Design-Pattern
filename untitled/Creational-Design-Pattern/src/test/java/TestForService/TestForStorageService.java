@@ -1,4 +1,4 @@
-package TestForAbstractFactoryDesignPattern;
+package TestForService;
 
 import InformationObject.FamilyRegistry;
 import Service.StorageService;
