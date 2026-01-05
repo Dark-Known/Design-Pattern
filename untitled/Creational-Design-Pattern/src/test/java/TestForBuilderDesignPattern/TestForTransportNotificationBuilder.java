@@ -193,4 +193,40 @@ public class TestForTransportNotificationBuilder {
         Assertions.assertEquals("Invalid Destination Address",exception.getMessage());
 
     }
+
+    @Test
+    void resultShouldBeInvalidTimeStamp()
+    {
+        String transportType= "Transport 1";
+        int distanceInfo=11;
+        String userName="user1";
+        String userAddress= "userAddress1";
+        String sourceAddress="sourceAddress1";
+        String destAddress="destAddress";
+        IllegalStateException exception= Assertions.assertThrows(IllegalStateException.class,()->{
+            notificationBuilder.setTransportType(transportType).setDistanceInfo(distanceInfo).
+                    setUserName(userName).setUserAddress(userAddress).setSourceAddress(sourceAddress).
+                    setDestAddress(destAddress).setTimeStamp("").build();});
+
+        Assertions.assertEquals("Invalid Time Stamp",exception.getMessage());
+
+    }
+
+    @Test
+    void resultShouldBeInvalidTimeStampWithNullAsTimestamp()
+    {
+        String transportType= "Transport 1";
+        int distanceInfo=11;
+        String userName="user1";
+        String userAddress= "userAddress1";
+        String sourceAddress="sourceAddress1";
+        String destAddress="destAddress";
+        IllegalStateException exception= Assertions.assertThrows(IllegalStateException.class,()->{
+            notificationBuilder.setTransportType(transportType).setDistanceInfo(distanceInfo).
+                    setUserName(userName).setUserAddress(userAddress).setSourceAddress(sourceAddress).
+                    setDestAddress(destAddress).setTimeStamp(null).build();});
+
+        Assertions.assertEquals("Invalid Time Stamp",exception.getMessage());
+
+    }
 }

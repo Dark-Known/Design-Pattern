@@ -76,7 +76,7 @@ public class CargoNotificationBuilder implements Builder<CargoInfoNotification>{
     {
         if(distanceInfo<10)
         {
-            throw new IllegalStateException("Invalid distance Info");
+            throw new IllegalStateException("Invalid Distance Information");
         }
 
     }
