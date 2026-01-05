@@ -3,18 +3,6 @@ package AbstractFactoryDesignPattern;
 import Service.SalesCounterService;
 
 public class ModernSofa implements ISofa{
-    static int unitsSold=0;
-
-
-    ModernSofa()
-    {
-        ModernSofa.unitsSold=ModernSofa.unitsSold+1;
-    }
-
-    @Override
-    public int getunitsSold() {
-        return ModernSofa.unitsSold;
-    }
 
     @Override
     public String getmanfName() {

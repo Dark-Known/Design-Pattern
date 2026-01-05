@@ -9,6 +9,7 @@ public class TestForVictoriaFurnitureFactory {
     private final VictoriaFurnitureFactory victoriaFurnitureFactory= new VictoriaFurnitureFactory();
 
 
+    @Test
     public void resultShouldBeVictoriaChair(){
         IChair actualVictoriaChair= victoriaFurnitureFactory.createChair();
         Assertions.assertEquals(VictoriaChair.class,actualVictoriaChair.getClass());
