@@ -8,7 +8,6 @@ import org.testng.Assert;
 
 public class TestForModernFurnitureFactory {
     private final ModernFurnitureFactory modernFurnitureFactory=new ModernFurnitureFactory();
-    private final  IChair modernChair=modernFurnitureFactory.createChair();
 
     @Test
     void resultShouldBeModernChair(){
@@ -23,9 +22,5 @@ public class TestForModernFurnitureFactory {
         ISofa actualModernSofa= modernFurnitureFactory.createSofa();
         Assertions.assertEquals(ModernSofa.class,actualModernSofa.getClass());
     }
-
-  
-
-
 
 }

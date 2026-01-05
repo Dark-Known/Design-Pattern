@@ -1,3 +1,4 @@
+import BuilderDesignPattern.TransportNotificationBuilder;
 import InformationObject.*;
 import Service.CurrentTimeService;
 import Service.FieldMapper;
@@ -6,14 +7,9 @@ import Service.StorageService;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class Main {
-    private enum TesterEnum{
-        MODERN,
-        VICTORIA,
-        CHAIR,
-        SOFA
-    }
     public static void main(String[] args) {
         // after some server side ops we get jsonObj
         JsonObj res1 = new JsonObj("Road", 500, "modern chair",
@@ -56,7 +52,7 @@ public class Main {
         responseQueue.forEach((JsonObj res) -> {
             // extract info from jsonObjs and distribute to individual information objs
             FieldMapper fieldMapper= new FieldMapper(res);
-            String timeStamp= CurrentTimeService.getNow();
+            String timeStamp= CurrentTimeService.getTimeStamp();
 
             try {
                 fieldMapper.map();
@@ -78,9 +74,12 @@ public class Main {
                 System.out.println(e.getMessage());
             }
 
-
-
         });
+
+
+
+
+
 
 
 

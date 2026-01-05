@@ -3,7 +3,7 @@ package Service;
 import java.time.Instant;
 
 public class CurrentTimeService {
-    public static String getNow(){
+    public static String getTimeStamp(){
         String timeStamp= Instant.now().toString();
         String[] tempSplitArr=timeStamp.split("T");
         String tempTimeStamp= tempSplitArr[1];

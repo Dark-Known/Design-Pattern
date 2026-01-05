@@ -4,15 +4,23 @@ import AbstractFactoryDesignPattern.FurnitureInfo;
 import AbstractFactoryDesignPattern.ModernFurnitureFactory;
 import Service.CurrentTimeService;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class TestForExtractingModernFamilyInfo {
     private final String date =CurrentTimeService.getDate();
-    private final  FurnitureInfo expectedFurnitureInfoObj= new FurnitureInfo("Modern COMPANY","Modern ADDRESS",
-            "silk",date);
-    private final ModernFurnitureFactory modernFurnitureFactory= new ModernFurnitureFactory();
-    private final FurnitureInfo actualFurnitureInfoObj = modernFurnitureFactory.getFamilyInfo();
+    private   FurnitureInfo expectedFurnitureInfoObj;
+    private  FurnitureInfo actualFurnitureInfoObj;
 
+
+    @BeforeEach
+    void setUp(){
+        expectedFurnitureInfoObj= new FurnitureInfo("Modern COMPANY","Modern ADDRESS",
+                "silk",date);
+        ModernFurnitureFactory modernFurnitureFactory = new ModernFurnitureFactory();
+        actualFurnitureInfoObj = modernFurnitureFactory.getFamilyInfo();
+
+    }
 
 
 
@@ -51,12 +59,6 @@ public class TestForExtractingModernFamilyInfo {
 
         Assertions.assertEquals(expectedManfDate,actualManfDate);
     }
-//    @Test
-//    void ResultShouldBeFourModernChairUnitsSold(){
-//        Assertions.assertEquals(4 ,);
-//
-//
-//    }
 
 
 

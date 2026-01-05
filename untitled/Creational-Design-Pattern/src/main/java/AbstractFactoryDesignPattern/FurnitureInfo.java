@@ -13,6 +13,7 @@ public class FurnitureInfo {
         validateManfName(manfName);
         validateManfAddress(manfAddress);
         validateMaterialUsed(materialUsed);
+        validateManfDate(manfDate);
         this.manfName = manfName;
         this.manfAddress = manfAddress;
         this.materialUsed = materialUsed;
@@ -20,22 +21,30 @@ public class FurnitureInfo {
     }
 
     private void validateManfName(String manfName){
-        if(manfName.isEmpty())
+        if(manfName==null || manfName.trim().isEmpty())
         {
-            throw new IllegalStateException("Invalid Manufacturer name");
+            throw new IllegalArgumentException("Invalid Manufacturer name");
         }
     }
     private void validateManfAddress(String manfAddress){
-        if(manfAddress.isEmpty())
+        if(manfAddress==null || manfAddress.trim().isEmpty())
         {
-            throw new IllegalStateException("Invalid Manufacturer Address");
+            throw new IllegalArgumentException("Invalid Manufacturer Address");
         }
     }
     private void validateMaterialUsed(String materialUsed){
-        if(materialUsed.isEmpty())
+        if(materialUsed==null || materialUsed.trim().isEmpty())
         {
-            throw new IllegalStateException("Invalid Material Used");
+            throw new IllegalArgumentException("Invalid Material Used");
         }
+    }
+    private void validateManfDate(String manfDate)
+    {
+        if(manfDate==null || manfDate.trim().isEmpty())
+        {
+            throw new IllegalArgumentException("Invalid Manufacture Date");
+        }
+
     }
     public String getManfName(){
         return this.manfName;
