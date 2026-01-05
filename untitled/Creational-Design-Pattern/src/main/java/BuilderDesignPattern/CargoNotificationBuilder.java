@@ -1,7 +1,6 @@
 package BuilderDesignPattern;
 
 import AbstractFactoryDesignPattern.FurnitureInfo;
-import AbstractFactoryDesignPattern.FurnitureSelector;
 
 public class CargoNotificationBuilder implements Builder<CargoInfoNotification>{
     private String transportType;
