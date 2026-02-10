@@ -5,6 +5,9 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/untitled/pom.xml" />
+        <option value="$PROJECT_DIR$/untitled/Creational-Design-Pattern/pom.xml" />
+        <option value="$PROJECT_DIR$/untitled/Structural-Design-Pattern/pom.xml" />
+        <option value="$PROJECT_DIR$/BootStrap/pom.xml" />
       </list>
     </option>
   </component>

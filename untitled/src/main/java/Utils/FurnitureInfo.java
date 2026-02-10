@@ -1,4 +1,4 @@
-package AbstractFactoryDesignPattern;
+package Utils;
 
 public class FurnitureInfo {
     private final String manfName;

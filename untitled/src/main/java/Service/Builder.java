@@ -1,6 +1,6 @@
-package BuilderDesignPattern;
+package Service;
 
-import AbstractFactoryDesignPattern.FurnitureInfo;
+import Utils.FurnitureInfo;
 
 public interface Builder<T> {
 //    public Builder<T> reset();

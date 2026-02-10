@@ -1,6 +1,6 @@
 package TestForAbstractFactoryDesignPattern;
 
-import AbstractFactoryDesignPattern.FurnitureInfo;
+import Utils.FurnitureInfo;
 import AbstractFactoryDesignPattern.ModernFurnitureFactory;
 import Service.CurrentTimeService;
 import org.junit.jupiter.api.Assertions;
@@ -43,7 +43,7 @@ public class TestForExtractingModernFamilyInfo {
     }
 
     @Test
-    void testToVerifyGetMaterialInfo()
+    void testToVerifyGetMaterialBuildInfo()
     {
         String expectedMaterialInfo= expectedFurnitureInfoObj.getMaterialUsed();
         String actualMaterialInfo= actualFurnitureInfoObj.getMaterialUsed();

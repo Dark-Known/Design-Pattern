@@ -1,5 +1,7 @@
 package AbstractFactoryDesignPattern;
 
+import Utils.FurnitureInfo;
+
 public abstract class FurnitureFamilyFactory {
 
 

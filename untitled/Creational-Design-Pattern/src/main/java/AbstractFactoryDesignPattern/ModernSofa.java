@@ -1,6 +1,6 @@
 package AbstractFactoryDesignPattern;
 
-import Service.SalesCounterService;
+import Utils.ModernFamilyInfo;
 
 public class ModernSofa implements ISofa{
 

@@ -1,7 +1,5 @@
-package BuilderDesignPattern;
+package Utils;
 
-
-import java.sql.Time;
 
 public class TransportInfoNotification {
     private String timeStamp;

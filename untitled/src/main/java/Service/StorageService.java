@@ -1,7 +1,7 @@
 package Service;
 
-import InformationObject.FamilyRegistry;
-import InformationObject.InMemoryFamilyUnits;
+import Utils.FamilyRegistry;
+import Utils.InMemoryFamilyUnits;
 
 public class StorageService {
     FamilyRegistry familyRegistry;

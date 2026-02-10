@@ -1,6 +1,6 @@
 package TestForAbstractFactoryDesignPattern;
 
-import AbstractFactoryDesignPattern.FamilySelector;
+import Service.FamilySelector;
 import AbstractFactoryDesignPattern.FurnitureFamilyFactory;
 import AbstractFactoryDesignPattern.ModernFurnitureFactory;
 import AbstractFactoryDesignPattern.VictoriaFurnitureFactory;

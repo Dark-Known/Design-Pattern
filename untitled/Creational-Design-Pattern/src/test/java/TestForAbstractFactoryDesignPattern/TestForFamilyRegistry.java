@@ -1,8 +1,7 @@
 package TestForAbstractFactoryDesignPattern;
 
-import InformationObject.FamilyRegistry;
-import InformationObject.InMemoryFamily;
-import InformationObject.InMemoryFamilyUnits;
+import Utils.FamilyRegistry;
+import Utils.InMemoryFamily;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

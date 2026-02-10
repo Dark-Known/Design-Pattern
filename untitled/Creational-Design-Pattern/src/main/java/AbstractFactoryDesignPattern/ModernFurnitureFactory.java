@@ -1,5 +1,8 @@
 package AbstractFactoryDesignPattern;
 
+import Utils.FurnitureInfo;
+import Utils.ModernFamilyInfo;
+
 import java.time.Instant;
 
 public class ModernFurnitureFactory extends FurnitureFamilyFactory {
@@ -15,15 +18,10 @@ public class ModernFurnitureFactory extends FurnitureFamilyFactory {
         return new ModernChair();
 
     }
-
-
     @Override
     public ISofa createSofa() {
         return new ModernSofa();
     }
-
-
-
 
     @Override
     public FurnitureInfo getFamilyInfo() {

@@ -1,6 +1,6 @@
 package TestForAbstractFactoryDesignPattern;
 
-import AbstractFactoryDesignPattern.FurnitureInfo;
+import Utils.FurnitureInfo;
 import AbstractFactoryDesignPattern.VictoriaFurnitureFactory;
 import Service.CurrentTimeService;
 import org.junit.jupiter.api.Assertions;

@@ -1,5 +1,7 @@
 package AbstractFactoryDesignPattern;
 
+import Utils.VictoriaFamilyInfo;
+
 public class VictoriaSofa implements ISofa{
     @Override
     public String getmanfName() {

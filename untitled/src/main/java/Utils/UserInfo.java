@@ -1,4 +1,4 @@
-package InformationObject;
+package Utils;
 
 public class UserInfo {
     private final String userName;

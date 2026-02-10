@@ -1,4 +1,4 @@
-package InformationObject;
+package Utils;
 
 public interface InMemoryFamilyUnits {
     public void incrementUnit(String furnitureType);

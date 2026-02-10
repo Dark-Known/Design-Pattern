@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="Creational-Design-Pattern (1)" />
+        <module name="BootStrap" />
         <module name="Structural-Design-Pattern" />
         <module name="Creational-Design-Pattern" />
       </profile>

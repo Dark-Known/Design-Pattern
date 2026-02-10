@@ -1,4 +1,8 @@
-package AbstractFactoryDesignPattern;
+package Service;
+
+import AbstractFactoryDesignPattern.FurnitureFamilyFactory;
+import AbstractFactoryDesignPattern.ModernFurnitureFactory;
+import AbstractFactoryDesignPattern.VictoriaFurnitureFactory;
 
 public class FamilySelector {
     final String familyName;
@@ -35,11 +39,11 @@ public class FamilySelector {
         this.familyName= familyName;
     }
 
-    public FurnitureInfo getFamilyInfo()
-    {
-        FurnitureFamilyFactory familyFactory= this.getFamilyFactory();
-        return familyFactory.getFamilyInfo();
-    }
+//    public FurnitureInfo getFamilyInfo()
+//    {
+//        FurnitureFamilyFactory familyFactory= this.getFamilyFactory();
+//        return familyFactory.getFamilyInfo();
+//    }
 
     public  FurnitureFamilyFactory getFamilyFactory()
     {
