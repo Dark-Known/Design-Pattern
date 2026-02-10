@@ -1,5 +1,7 @@
 package AbstractFactoryDesignPattern;
 
+import Utils.VictoriaFamilyInfo;
+
 public class VictoriaChair implements IChair{
     @Override
     public String getmanfName() {

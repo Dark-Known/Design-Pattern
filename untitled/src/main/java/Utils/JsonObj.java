@@ -1,4 +1,4 @@
-package InformationObject;
+package Utils;
 
 public class JsonObj {
     private final String transportMode;

@@ -1,6 +1,6 @@
 package TestForService;
 
-import InformationObject.FamilyRegistry;
+import Utils.FamilyRegistry;
 import Service.StorageService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;

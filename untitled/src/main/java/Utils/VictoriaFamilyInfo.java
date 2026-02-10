@@ -1,6 +1,8 @@
-package AbstractFactoryDesignPattern;
+package Utils;
 
- enum VictoriaFamilyInfo {
+import Service.CurrentTimeService;
+
+public enum VictoriaFamilyInfo {
     MANF_NAME("Victorian COMPANY"),
     MANF_ADD("Victorian ADDRESS"),
      MATERIAL("cotton"),
@@ -22,5 +24,14 @@ package AbstractFactoryDesignPattern;
      }
      public int getValue(){
          return this.count;
+     }
+
+     public static FurnitureInfo buildInfo(){
+        return new FurnitureInfo(
+                VictoriaFamilyInfo.MATERIAL.getName(),
+                VictoriaFamilyInfo.MANF_NAME.getName(),
+                VictoriaFamilyInfo.MATERIAL.getName(),
+                CurrentTimeService.getDate()
+        );
      }
 }

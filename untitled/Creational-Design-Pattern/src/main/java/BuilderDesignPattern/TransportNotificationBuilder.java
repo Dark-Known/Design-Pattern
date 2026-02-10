@@ -1,7 +1,8 @@
 package BuilderDesignPattern;
 
-import AbstractFactoryDesignPattern.FurnitureInfo;
-import com.sun.jdi.connect.Transport;
+import Service.Builder;
+import Utils.FurnitureInfo;
+import Utils.TransportInfoNotification;
 
 public class TransportNotificationBuilder implements Builder<TransportInfoNotification> {
 

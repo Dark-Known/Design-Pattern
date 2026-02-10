@@ -1,12 +1,12 @@
-package InformationObject;
+package Utils;
 
 import java.util.EnumMap;
 import java.util.Map;
 
 public class FamilyRegistry {
-    private final Map<FamilyInfoEnum,InMemoryFamilyUnits> familyRegistry=new EnumMap<>(FamilyInfoEnum.class);
+    private final Map<FamilyMembersEnum,InMemoryFamilyUnits> familyRegistry=new EnumMap<>(FamilyMembersEnum.class);
     public FamilyRegistry(){
-        for(FamilyInfoEnum familyMember : FamilyInfoEnum.values())
+        for(FamilyMembersEnum familyMember : FamilyMembersEnum.values())
         {
             familyRegistry.put(familyMember, new InMemoryFamily());
         }
@@ -14,13 +14,13 @@ public class FamilyRegistry {
     public InMemoryFamilyUnits getFamily(String familyName)
     {
         isValid(familyName);
-       FamilyInfoEnum familyMember = FamilyInfoEnum.valueOf(familyName.toUpperCase());
+       FamilyMembersEnum familyMember = FamilyMembersEnum.valueOf(familyName.toUpperCase());
        return familyRegistry.get(familyMember);
     }
     private void isValid(String familyName)
     {
         try {
-            FamilyInfoEnum.valueOf(familyName.toUpperCase());
+            FamilyMembersEnum.valueOf(familyName.toUpperCase());
         }
         catch(IllegalArgumentException e) {
             throw new IllegalArgumentException("Invalid family Name");

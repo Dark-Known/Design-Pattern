@@ -1,6 +1,4 @@
-package BuilderDesignPattern;
-
-import AbstractFactoryDesignPattern.FurnitureInfo;
+package Utils;
 
 public class CargoInfoNotification {
     private String timeStamp;

@@ -1,8 +1,10 @@
 package BuilderDesignPattern;
 
-import AbstractFactoryDesignPattern.FurnitureInfo;
+import Service.Builder;
+import Utils.CargoInfoNotification;
+import Utils.FurnitureInfo;
 
-public class CargoNotificationBuilder implements Builder<CargoInfoNotification>{
+public class CargoNotificationBuilder implements Builder<CargoInfoNotification> {
     private String transportType;
     private int distanceInfo;
     private FurnitureInfo furnitureInfo;

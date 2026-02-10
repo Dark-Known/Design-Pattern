@@ -1,6 +1,8 @@
-package AbstractFactoryDesignPattern;
+package Utils;
 
-enum ModernFamilyInfo {
+import Service.CurrentTimeService;
+
+public enum ModernFamilyInfo {
     MANF_NAME("Modern COMPANY"),
     MANF_ADD("Modern ADDRESS"),
     MATERIAL("silk"),
@@ -22,5 +24,12 @@ enum ModernFamilyInfo {
     }
     public int getValue(){
         return this.count;
+    }
+    public static FurnitureInfo buildInfo(){
+         return new FurnitureInfo(
+                 ModernFamilyInfo.MANF_NAME.getName(),
+                 ModernFamilyInfo.MANF_ADD.getName(),
+                 ModernFamilyInfo.MATERIAL.getName(),
+                 CurrentTimeService.getDate());
     }
 }

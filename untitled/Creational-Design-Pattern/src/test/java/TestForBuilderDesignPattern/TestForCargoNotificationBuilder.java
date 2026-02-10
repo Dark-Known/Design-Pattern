@@ -1,10 +1,8 @@
 package TestForBuilderDesignPattern;
 
-import AbstractFactoryDesignPattern.FurnitureInfo;
-import BuilderDesignPattern.CargoInfoNotification;
+import Utils.FurnitureInfo;
 import BuilderDesignPattern.CargoNotificationBuilder;
 import Service.CurrentTimeService;
-import com.beust.ah.A;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

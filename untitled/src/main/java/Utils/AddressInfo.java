@@ -1,4 +1,4 @@
-package InformationObject;
+package Utils;
 
 public class AddressInfo {
     private final String sourceAddress;

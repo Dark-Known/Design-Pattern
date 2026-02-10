@@ -1,5 +1,7 @@
 package AbstractFactoryDesignPattern;
 
+import Utils.ModernFamilyInfo;
+
 public class ModernChair implements IChair{
     @Override
     public String getmanfName() {
