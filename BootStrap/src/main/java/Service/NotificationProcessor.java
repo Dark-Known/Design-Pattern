@@ -57,8 +57,6 @@ public class NotificationProcessor implements INotificationProcessor {
         notificationService.pushCargoNotification(cargoNotification);
         notificationService.pushTransportNotification(transportNotification);
 
-        CargoParser cargoParser = new CargoParser();
-
         storageService.increment(cargoParser.getFamilyName(jsonObj.getCargo()),cargoParser.getFurnitureName(jsonObj.getCargo()));
 
     }
