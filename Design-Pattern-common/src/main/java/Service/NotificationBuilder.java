@@ -43,6 +43,7 @@ public class NotificationBuilder {
                 setTransportType(cargoInfoObj.getTransportType()).
                 setSourceAddress(addressInfoObj.getSourceAddress()).
                 setDestAddress(addressInfoObj.getDestAddress()).
+                setDistanceInfo(cargoInfoObj.getDistanceInfo()).
                 setTimeStamp(timeStamp);
 
     }
