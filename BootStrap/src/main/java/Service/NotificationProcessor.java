@@ -17,10 +17,21 @@ public class NotificationProcessor implements INotificationProcessor {
 
     @Override
     public void processor(JsonObj jsonObj) {
-        FieldMapper fieldMapper = new FieldMapper(jsonObj);
+
+        // Create extractor & CargoParser
+        ExtractFamilyInfo extractFamilyInfo = new ExtractFamilyInfo();
+        CargoParser cargoParser= new CargoParser();
+
+        // Create respective Domain Obj Mappers
+        UserMapper userMapper = new UserMapper();
+        AddressMapper addressMapper = new AddressMapper();
+        CargoInfoMapper cargoInfoMapper= new CargoInfoMapper(extractFamilyInfo,cargoParser);
+        DomainMapper domainMapper = new DomainMapper(
+                userMapper,addressMapper,cargoInfoMapper
+        );
 
         // Map Domain Obj to respective domain business Objects
-        DomainObj domainObj=fieldMapper.map();
+        DomainObj domainObj=domainMapper.map(jsonObj);
         UserInfo userInfoObj=domainObj.getUserInfo();
         AddressInfo addressInfoObj = domainObj.getAddressInfoObj();
         CargoInfo cargoInfoObj=domainObj.getCargoInfoObj();
@@ -46,9 +57,9 @@ public class NotificationProcessor implements INotificationProcessor {
         notificationService.pushCargoNotification(cargoNotification);
         notificationService.pushTransportNotification(transportNotification);
 
-        CargoParser cargoParser = new CargoParser(jsonObj.getCargo());
+        CargoParser cargoParser = new CargoParser();
 
-        storageService.increment(cargoParser.getFamilyName(),cargoParser.getFurnitureName());
+        storageService.increment(cargoParser.getFamilyName(jsonObj.getCargo()),cargoParser.getFurnitureName(jsonObj.getCargo()));
 
     }
 }

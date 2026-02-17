@@ -1,6 +1,6 @@
 package BuilderDesignPattern;
 
-import Service.Builder;
+import Utils.Builder;
 import Utils.CargoInfoNotification;
 import Utils.FurnitureInfo;
 

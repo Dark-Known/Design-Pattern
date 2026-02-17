@@ -1,6 +1,4 @@
-package Service;
-
-import Utils.FurnitureInfo;
+package Utils;
 
 public interface Builder<T> {
 //    public Builder<T> reset();

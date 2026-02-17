@@ -2,6 +2,8 @@ package Service;
 
 
 
+import Utils.ICounter;
+
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class SalesCounterService implements ICounter {

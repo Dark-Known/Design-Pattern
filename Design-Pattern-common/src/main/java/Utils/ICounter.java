@@ -1,4 +1,4 @@
-package Service;
+package Utils;
 
 public interface ICounter {
     public void increment();

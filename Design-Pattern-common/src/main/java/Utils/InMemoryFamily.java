@@ -1,6 +1,5 @@
 package Utils;
 
-import Service.ICounter;
 import Service.SalesCounterService;
 
 import java.util.EnumMap;

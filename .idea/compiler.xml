@@ -8,7 +8,6 @@
         <outputRelativeToContentRoot value="true" />
         <module name="Creational-Design-Pattern (1)" />
         <module name="BootStrap" />
-        <module name="Structural-Design-Pattern (1)" />
         <module name="Design-Pattern-common" />
         <module name="Structural-Design-Pattern" />
         <module name="Creational-Design-Pattern" />

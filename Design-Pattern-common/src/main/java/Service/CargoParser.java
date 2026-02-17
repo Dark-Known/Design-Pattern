@@ -3,19 +3,15 @@ package Service;
 import Utils.CargoInfo;
 
 public class CargoParser {
-    private final String cargoName;
-    CargoParser(String cargoName)
-    {
-        this.cargoName=cargoName;
-    }
-    public String getFamilyName(){
+
+    public String getFamilyName(String cargoName){
         // Get Family Name from cargo Name
         // Need to improve robust way to extract family and furniture name"
         String[] tempSplitArr = cargoName.split(" ");
         return tempSplitArr[0];
 
     }
-    public String getFurnitureName(){
+    public String getFurnitureName(String cargoName){
         String[] tempSplitArr = cargoName.split(" ");
         return tempSplitArr[1];
     }
