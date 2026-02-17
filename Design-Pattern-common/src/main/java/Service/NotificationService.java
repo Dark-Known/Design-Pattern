@@ -1,9 +1,11 @@
 package Service;
 
 
-import Utils.*;
+import Utils.CargoInfoNotification;
+import Utils.INotificationService;
+import Utils.TransportInfoNotification;
 
-public class NotificationService implements  INotificationService{
+public class NotificationService implements INotificationService {
 
     public void pushNotification() {
         try {

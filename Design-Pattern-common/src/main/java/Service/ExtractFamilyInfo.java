@@ -4,7 +4,6 @@ import Utils.FamilyMembersEnum;
 import Utils.FurnitureInfo;
 
 public class ExtractFamilyInfo {
-    private FamilyMembersEnum familyMembersEnum;
 
     private void validateFamilyName(String familyName){
         if(familyName==null || familyName.trim().isEmpty())
@@ -23,7 +22,7 @@ public class ExtractFamilyInfo {
 
     public FurnitureInfo getInfo(String familyName) {
         validateFamilyName(familyName);
-        return familyMembersEnum.Info(familyName);
+        return FamilyMembersEnum.Info(familyName);
     }
 
 

@@ -9,6 +9,7 @@
         <module name="Creational-Design-Pattern (1)" />
         <module name="BootStrap" />
         <module name="Structural-Design-Pattern" />
+        <module name="Design-Pattern-common" />
         <module name="Creational-Design-Pattern" />
       </profile>
     </annotationProcessing>

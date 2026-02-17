@@ -8,7 +8,13 @@
         <option value="$PROJECT_DIR$/untitled/Creational-Design-Pattern/pom.xml" />
         <option value="$PROJECT_DIR$/untitled/Structural-Design-Pattern/pom.xml" />
         <option value="$PROJECT_DIR$/BootStrap/pom.xml" />
+        <option value="$PROJECT_DIR$/Design-Pattern-common/pom.xml" />
       </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/BootStrap/Design-Pattern-Common/pom.xml" />
+      </set>
     </option>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_X" default="true" project-jdk-name="corretto-24" project-jdk-type="JavaSDK">

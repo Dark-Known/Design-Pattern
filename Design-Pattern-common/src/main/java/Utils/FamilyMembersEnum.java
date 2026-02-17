@@ -17,8 +17,8 @@ public enum FamilyMembersEnum {
     abstract FurnitureInfo getFamilyInfo();
 
 
-    public FurnitureInfo Info(String familyName)
+    public static FurnitureInfo Info(String familyName)
     {
-        return FamilyMembersEnum.valueOf(familyName).getFamilyInfo();
+        return FamilyMembersEnum.valueOf(familyName.toUpperCase()).getFamilyInfo();
     }
 }
