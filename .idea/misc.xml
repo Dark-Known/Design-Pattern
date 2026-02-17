@@ -9,11 +9,15 @@
         <option value="$PROJECT_DIR$/untitled/Structural-Design-Pattern/pom.xml" />
         <option value="$PROJECT_DIR$/BootStrap/pom.xml" />
         <option value="$PROJECT_DIR$/Design-Pattern-common/pom.xml" />
+        <option value="$PROJECT_DIR$/Creational-Design-Pattern/pom.xml" />
+        <option value="$PROJECT_DIR$/Structural-Design-Pattern/pom.xml" />
+        <option value="$PROJECT_DIR$/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
       <set>
         <option value="$PROJECT_DIR$/BootStrap/Design-Pattern-Common/pom.xml" />
+        <option value="$PROJECT_DIR$/untitled/pom.xml" />
       </set>
     </option>
   </component>
