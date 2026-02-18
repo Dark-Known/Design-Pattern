@@ -16,12 +16,6 @@ public class FamilySelector {
         return FamilyEnum.getFamilyType(familyName.toUpperCase()).getFamilyFactory();
     }
 
-//    public FurnitureInfo getFamilyInfo()
-//    {
-//        FurnitureFamilyFactory familyFactory= this.getFamilyFactory();
-//        return familyFactory.getFamilyInfo();
-//    }
-
     private enum FamilyEnum {
         MODERN(new ModernFurnitureFactory()),
         VICTORIA(new VictoriaFurnitureFactory());
