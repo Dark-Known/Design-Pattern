@@ -9,6 +9,11 @@ public class ExtractFamilyInfo {
         if (familyName == null || familyName.trim().isEmpty()) {
             throw new IllegalStateException("Invalid Family Name");
         }
+
+    }
+
+    private void validateFamilyMemberExistence(String familyName)
+    {
         try {
             FamilyMembersEnum.valueOf(familyName.toUpperCase());
         } catch (IllegalArgumentException e) {
@@ -18,6 +23,7 @@ public class ExtractFamilyInfo {
 
     public FurnitureInfo getInfo(String familyName) {
         validateFamilyName(familyName);
+        validateFamilyMemberExistence(familyName);
         return FamilyMembersEnum.Info(familyName);
     }
 
