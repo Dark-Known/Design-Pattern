@@ -11,6 +11,11 @@ public class ExtractFamilyInfo {
         }
 
     }
+    private String normalise(String familyName)
+    {
+        String normalisedName= familyName.trim();
+        return normalisedName
+    }
 
     private void validateFamilyMemberExistence(String familyName)
     {
@@ -22,7 +27,7 @@ public class ExtractFamilyInfo {
     }
 
     public FurnitureInfo getInfo(String familyName) {
-        String normalisedName= familyName.trim();
+        String normalisedName= normalise(familyName);
         validateFamilyName(familyName);
         validateFamilyMemberExistence(familyName);
         return FamilyMembersEnum.Info(normalisedName);
