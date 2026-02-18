@@ -14,7 +14,7 @@ public class ExtractFamilyInfo {
     private String normalise(String familyName)
     {
         String normalisedName= familyName.trim();
-        return normalisedName
+        return normalisedName;
     }
 
     private void validateFamilyMemberExistence(String familyName)
