@@ -5,36 +5,32 @@ import Utils.*;
 
 public class DomainMapper {
     private final UserMapper userMapper;
-    private final  AddressMapper addressMapper;
+    private final AddressMapper addressMapper;
     private final CargoInfoMapper cargoInfoMapper;
 
 
     public DomainMapper(UserMapper userMapper, AddressMapper addressMapper,
-                        CargoInfoMapper cargoInfoMapper)
-    {
-        this.userMapper=userMapper;
-        this.addressMapper=addressMapper;
-        this.cargoInfoMapper=cargoInfoMapper;
+                        CargoInfoMapper cargoInfoMapper) {
+        this.userMapper = userMapper;
+        this.addressMapper = addressMapper;
+        this.cargoInfoMapper = cargoInfoMapper;
 
     }
-    private CargoInfo mapCargoInfoObj(JsonObj jsonObj)
-    {
+
+    private CargoInfo mapCargoInfoObj(JsonObj jsonObj) {
         return cargoInfoMapper.map(jsonObj);
     }
 
-    private UserInfo mapUserInfoObj(JsonObj jsonObj)
-    {
+    private UserInfo mapUserInfoObj(JsonObj jsonObj) {
         return userMapper.map(jsonObj);
     }
 
-    private AddressInfo mapAddressInfoObj(JsonObj jsonObj)
-    {
+    private AddressInfo mapAddressInfoObj(JsonObj jsonObj) {
         return addressMapper.map(jsonObj);
     }
 
 
-    public DomainObj map(JsonObj jsonObj)
-    {
+    public DomainObj map(JsonObj jsonObj) {
         return new DomainObj(
                 mapUserInfoObj(jsonObj),
                 mapAddressInfoObj(jsonObj),
@@ -42,8 +38,6 @@ public class DomainMapper {
                 mapCargoInfoObj(jsonObj).getFurnitureInfoObj()
         );
     }
-
-
 
 
 }

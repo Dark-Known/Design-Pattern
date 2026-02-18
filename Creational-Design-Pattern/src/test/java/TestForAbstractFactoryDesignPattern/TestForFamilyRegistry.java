@@ -10,14 +10,13 @@ public class TestForFamilyRegistry {
     private FamilyRegistry familyRegistry;
 
     @BeforeEach
-    void setUpInMemory()
-    {
-        familyRegistry= new FamilyRegistry();
+    void setUpInMemory() {
+        familyRegistry = new FamilyRegistry();
 
     }
 
     @Test
-    void shouldReturnModernFamilyRegistry(){
+    void shouldReturnModernFamilyRegistry() {
         Assertions.assertEquals(
                 InMemoryFamily.class
                 ,

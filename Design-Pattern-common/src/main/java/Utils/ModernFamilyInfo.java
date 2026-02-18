@@ -8,28 +8,31 @@ public enum ModernFamilyInfo {
     MATERIAL("silk"),
     CHAIR_LEGS(3),
     SOFA_LEGS(4);
-    private  String name;
+    private String name;
     private int count;
-     ModernFamilyInfo(String name)
-    {
-        this.name= name;
+
+    ModernFamilyInfo(String name) {
+        this.name = name;
     }
-     ModernFamilyInfo(int count)
-    {
-        this.count=count;
+
+    ModernFamilyInfo(int count) {
+        this.count = count;
     }
-    public String getName(){
+
+    public static FurnitureInfo buildInfo() {
+        return new FurnitureInfo(
+                ModernFamilyInfo.MANF_NAME.getName(),
+                ModernFamilyInfo.MANF_ADD.getName(),
+                ModernFamilyInfo.MATERIAL.getName(),
+                CurrentTimeService.getDate());
+    }
+
+    public String getName() {
         return this.name;
 
     }
-    public int getValue(){
+
+    public int getValue() {
         return this.count;
-    }
-    public static FurnitureInfo buildInfo(){
-         return new FurnitureInfo(
-                 ModernFamilyInfo.MANF_NAME.getName(),
-                 ModernFamilyInfo.MANF_ADD.getName(),
-                 ModernFamilyInfo.MATERIAL.getName(),
-                 CurrentTimeService.getDate());
     }
 }

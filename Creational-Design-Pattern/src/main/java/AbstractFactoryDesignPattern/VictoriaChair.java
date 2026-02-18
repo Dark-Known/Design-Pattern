@@ -2,7 +2,7 @@ package AbstractFactoryDesignPattern;
 
 import Utils.VictoriaFamilyInfo;
 
-public class VictoriaChair implements IChair{
+public class VictoriaChair implements IChair {
     @Override
     public String getmanfName() {
         return VictoriaFamilyInfo.MANF_NAME.getName();

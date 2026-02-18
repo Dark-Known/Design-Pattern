@@ -10,7 +10,6 @@ public abstract class FurnitureFamilyFactory {
     public abstract ISofa createSofa();
 
 
-
     public abstract FurnitureInfo getFamilyInfo();
 
 }

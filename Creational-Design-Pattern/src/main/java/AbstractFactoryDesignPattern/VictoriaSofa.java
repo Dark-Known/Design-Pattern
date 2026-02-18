@@ -2,7 +2,7 @@ package AbstractFactoryDesignPattern;
 
 import Utils.VictoriaFamilyInfo;
 
-public class VictoriaSofa implements ISofa{
+public class VictoriaSofa implements ISofa {
     @Override
     public String getmanfName() {
         return VictoriaFamilyInfo.MANF_NAME.getName();

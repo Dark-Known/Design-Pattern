@@ -1,13 +1,12 @@
 package Service;
 
 
-
 import Utils.ICounter;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class SalesCounterService implements ICounter {
-    private final AtomicInteger counter=new AtomicInteger(0);
+    private final AtomicInteger counter = new AtomicInteger(0);
 
     @Override
     public void increment() {
@@ -16,7 +15,7 @@ public class SalesCounterService implements ICounter {
 
     @Override
     public int getCount() {
-       return counter.intValue();
+        return counter.intValue();
 
     }
 

@@ -7,48 +7,38 @@ import AbstractFactoryDesignPattern.VictoriaFurnitureFactory;
 public class FamilySelector {
     final String familyName;
 
-    private enum FamilyEnum{
+    public FamilySelector(String familyName) {
+        this.familyName = familyName;
+    }
+
+    public FurnitureFamilyFactory getFamilyFactory() {
+
+        return FamilyEnum.getFamilyType(familyName.toUpperCase()).getFamilyFactory();
+    }
+
+    private enum FamilyEnum {
         MODERN(new ModernFurnitureFactory()),
         VICTORIA(new VictoriaFurnitureFactory());
 
         private FurnitureFamilyFactory furnitureFamilyFactory;
 
-        FamilyEnum(FurnitureFamilyFactory furnitureFamilyFactory)
-        {
-            this.furnitureFamilyFactory=furnitureFamilyFactory;
+        FamilyEnum(FurnitureFamilyFactory furnitureFamilyFactory) {
+            this.furnitureFamilyFactory = furnitureFamilyFactory;
         }
-        static FamilyEnum getFamilyType(String familyName)
-        {
-            try{
-            return FamilyEnum.valueOf(familyName);}
 
-            catch(IllegalArgumentException e)
-            {
+        static FamilyEnum getFamilyType(String familyName) {
+            try {
+                return FamilyEnum.valueOf(familyName);
+            } catch (IllegalArgumentException e) {
                 throw new IllegalArgumentException("Family Name invalid");
             }
         }
-        FurnitureFamilyFactory getFamilyFactory()
-        {
+
+        FurnitureFamilyFactory getFamilyFactory() {
             return this.furnitureFamilyFactory;
 
         }
 
-    }
-    public FamilySelector(String familyName)
-    {
-        this.familyName= familyName;
-    }
-
-//    public FurnitureInfo getFamilyInfo()
-//    {
-//        FurnitureFamilyFactory familyFactory= this.getFamilyFactory();
-//        return familyFactory.getFamilyInfo();
-//    }
-
-    public  FurnitureFamilyFactory getFamilyFactory()
-    {
-
-            return FamilyEnum.getFamilyType(familyName.toUpperCase()).getFamilyFactory();
     }
 
 }

@@ -1,12 +1,12 @@
 package Utils;
 
 public enum FamilyMembersEnum {
-   MODERN {
-       @Override
-       FurnitureInfo getFamilyInfo() {
-           return ModernFamilyInfo.buildInfo();
-       }
-   },
+    MODERN {
+        @Override
+        FurnitureInfo getFamilyInfo() {
+            return ModernFamilyInfo.buildInfo();
+        }
+    },
     VICTORIA {
         @Override
         FurnitureInfo getFamilyInfo() {
@@ -14,11 +14,9 @@ public enum FamilyMembersEnum {
         }
     };
 
-    abstract FurnitureInfo getFamilyInfo();
-
-
-    public static FurnitureInfo Info(String familyName)
-    {
+    public static FurnitureInfo Info(String familyName) {
         return FamilyMembersEnum.valueOf(familyName.toUpperCase()).getFamilyInfo();
     }
+
+    abstract FurnitureInfo getFamilyInfo();
 }

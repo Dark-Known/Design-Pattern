@@ -1,34 +1,33 @@
 package Utils;
 
 
-
 public class CargoInfo {
     private final int distanceInfo;
     private final String cargoName;
     private final String transportType;
     private final FurnitureInfo furnitureInfoObj;
 
-    public CargoInfo(String transportType, String cargoName, int distanceInfo, FurnitureInfo furnitureInfoObj)
-    {
+    public CargoInfo(String transportType, String cargoName, int distanceInfo, FurnitureInfo furnitureInfoObj) {
 
-        this.cargoName=cargoName;
+        this.cargoName = cargoName;
         this.transportType = transportType;
-        this.distanceInfo=distanceInfo;
-        this.furnitureInfoObj=furnitureInfoObj;
+        this.distanceInfo = distanceInfo;
+        this.furnitureInfoObj = furnitureInfoObj;
     }
 
-    public String getCargoName(){
+    public String getCargoName() {
         return this.cargoName;
     }
-    public FurnitureInfo getFurnitureInfoObj(){
+
+    public FurnitureInfo getFurnitureInfoObj() {
         return this.furnitureInfoObj;
     }
-    public String getTransportType()
-    {
+
+    public String getTransportType() {
         return this.transportType;
     }
-    public int getDistanceInfo()
-    {
+
+    public int getDistanceInfo() {
         return this.distanceInfo;
     }
 

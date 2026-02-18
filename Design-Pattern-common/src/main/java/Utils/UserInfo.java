@@ -6,14 +6,34 @@ public class UserInfo {
 
 
     public UserInfo(String userName, String userAddress) {
+        validateUserName(userName);
+        validateUserAddress(userAddress);
+
         this.userName = userName;
         this.userAddress = userAddress;
     }
-    public String getUserName()
+
+    private void validateUserName(String userName)
     {
+        if(userName==null || userName.trim().isEmpty())
+        {
+            throw new IllegalArgumentException("Invalid User Name");
+        }
+    }
+
+    private void validateUserAddress(String userAddress)
+    {
+        if(userAddress==null || userAddress.trim().isEmpty())
+        {
+            throw new IllegalArgumentException("Invalid User Address");
+        }
+    }
+
+    public String getUserName() {
         return this.userName;
     }
-    public String getUserAddress(){
+
+    public String getUserAddress() {
         return this.userAddress;
     }
 }
