@@ -5,17 +5,13 @@ import Utils.FurnitureInfo;
 
 public class ExtractFamilyInfo {
 
-    private void validateFamilyName(String familyName){
-        if(familyName==null || familyName.trim().isEmpty())
-        {
+    private void validateFamilyName(String familyName) {
+        if (familyName == null || familyName.trim().isEmpty()) {
             throw new IllegalStateException("Invalid Family Name");
         }
-        try
-        {
+        try {
             FamilyMembersEnum.valueOf(familyName.toUpperCase());
-        }
-        catch(IllegalArgumentException e)
-        {
+        } catch (IllegalArgumentException e) {
             throw new IllegalArgumentException("Family Member doesnt exist");
         }
     }
@@ -24,8 +20,6 @@ public class ExtractFamilyInfo {
         validateFamilyName(familyName);
         return FamilyMembersEnum.Info(familyName);
     }
-
-
 
 
 }

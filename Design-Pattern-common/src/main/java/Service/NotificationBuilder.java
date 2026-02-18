@@ -10,24 +10,23 @@ public class NotificationBuilder {
     private final CargoInfo cargoInfoObj;
 
     public NotificationBuilder(String timeStamp, UserInfo userInfoObj,
-                               AddressInfo addressInfoObj, CargoInfo cargoInfoObj)
-    {
+                               AddressInfo addressInfoObj, CargoInfo cargoInfoObj) {
         this.timeStamp = timeStamp;
         this.userInfoObj = userInfoObj;
         this.addressInfoObj = addressInfoObj;
         this.cargoInfoObj = cargoInfoObj;
     }
-    public CargoInfoNotification cargoInfoNotificationBuilder(Builder<CargoInfoNotification> cargoNotificationBuilder)
-    {
+
+    public CargoInfoNotification cargoInfoNotificationBuilder(Builder<CargoInfoNotification> cargoNotificationBuilder) {
         return constructCargoNotificationBuilder(cargoNotificationBuilder).build();
     }
-    public TransportInfoNotification transportInfoNotificationBuilder(Builder<TransportInfoNotification> transportNotificationBuilder)
-    {
-            return constructTransportNotificationBuilder(transportNotificationBuilder).build();
+
+    public TransportInfoNotification transportInfoNotificationBuilder(Builder<TransportInfoNotification> transportNotificationBuilder) {
+        return constructTransportNotificationBuilder(transportNotificationBuilder).build();
     }
+
     private Builder<CargoInfoNotification> constructCargoNotificationBuilder(Builder<CargoInfoNotification>
-                                                                                     cargoNotificationBuilder)
-    {
+                                                                                     cargoNotificationBuilder) {
         return cargoNotificationBuilder.setTransportType(cargoInfoObj.getTransportType()).
                 setDistanceInfo(cargoInfoObj.getDistanceInfo()).
                 setCargoInfo(cargoInfoObj.getFurnitureInfoObj(), cargoInfoObj.getCargoName()).
@@ -35,9 +34,9 @@ public class NotificationBuilder {
                 setUserAddress(userInfoObj.getUserAddress()).
                 setTimeStamp(timeStamp);
     }
+
     private Builder<TransportInfoNotification> constructTransportNotificationBuilder
-            (Builder<TransportInfoNotification> transportNotificationBuilder)
-    {
+            (Builder<TransportInfoNotification> transportNotificationBuilder) {
         return transportNotificationBuilder.setUserName(userInfoObj.getUserName()).
                 setUserAddress(userInfoObj.getUserAddress()).
                 setTransportType(cargoInfoObj.getTransportType()).

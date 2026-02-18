@@ -32,20 +32,21 @@ public class JsonObj {
     public String getCargo() {
         return this.cargo;
     }
-    public String getUserName(){
+
+    public String getUserName() {
         return userName;
     }
-    public String getUserAddress()
-    {
+
+    public String getUserAddress() {
         return userAddress;
 
     }
-    public String getSourceAddress()
-    {
+
+    public String getSourceAddress() {
         return sourceAddress;
     }
-    public String getDestAddress()
-    {
+
+    public String getDestAddress() {
         return destAddress;
     }
 

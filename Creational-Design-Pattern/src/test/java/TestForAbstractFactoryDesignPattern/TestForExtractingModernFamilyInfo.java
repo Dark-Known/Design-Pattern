@@ -1,65 +1,59 @@
 package TestForAbstractFactoryDesignPattern;
 
-import Utils.FurnitureInfo;
 import AbstractFactoryDesignPattern.ModernFurnitureFactory;
 import Service.CurrentTimeService;
+import Utils.FurnitureInfo;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class TestForExtractingModernFamilyInfo {
-    private final String date =CurrentTimeService.getDate();
-    private   FurnitureInfo expectedFurnitureInfoObj;
-    private  FurnitureInfo actualFurnitureInfoObj;
+    private final String date = CurrentTimeService.getDate();
+    private FurnitureInfo expectedFurnitureInfoObj;
+    private FurnitureInfo actualFurnitureInfoObj;
 
 
     @BeforeEach
-    void setUp(){
-        expectedFurnitureInfoObj= new FurnitureInfo("Modern COMPANY","Modern ADDRESS",
-                "silk",date);
+    void setUp() {
+        expectedFurnitureInfoObj = new FurnitureInfo("Modern COMPANY", "Modern ADDRESS",
+                "silk", date);
         ModernFurnitureFactory modernFurnitureFactory = new ModernFurnitureFactory();
         actualFurnitureInfoObj = modernFurnitureFactory.getFamilyInfo();
 
     }
 
 
-
-
-
     @Test
-    void testToVerifyGetManfName(){
-        String expectedManfName= expectedFurnitureInfoObj.getManfName();
-        String ActualManfName= actualFurnitureInfoObj.getManfName();
+    void testToVerifyGetManfName() {
+        String expectedManfName = expectedFurnitureInfoObj.getManfName();
+        String ActualManfName = actualFurnitureInfoObj.getManfName();
 
-        Assertions.assertEquals(expectedManfName,ActualManfName);
-    }
-    @Test
-    void testToVerifyGetManfAddress()
-    {
-        String expectedManfAddress= expectedFurnitureInfoObj.getManfAddress();
-        String actualManfAddress= actualFurnitureInfoObj.getManfAddress();
-
-        Assertions.assertEquals(expectedManfAddress,actualManfAddress);
+        Assertions.assertEquals(expectedManfName, ActualManfName);
     }
 
     @Test
-    void testToVerifyGetMaterialBuildInfo()
-    {
-        String expectedMaterialInfo= expectedFurnitureInfoObj.getMaterialUsed();
-        String actualMaterialInfo= actualFurnitureInfoObj.getMaterialUsed();
+    void testToVerifyGetManfAddress() {
+        String expectedManfAddress = expectedFurnitureInfoObj.getManfAddress();
+        String actualManfAddress = actualFurnitureInfoObj.getManfAddress();
 
-        Assertions.assertEquals(expectedMaterialInfo,actualMaterialInfo);
+        Assertions.assertEquals(expectedManfAddress, actualManfAddress);
     }
 
     @Test
-    void testToVerifyGetManfDate()
-    {
-        String expectedManfDate= expectedFurnitureInfoObj.getManfDate();
-        String actualManfDate= actualFurnitureInfoObj.getManfDate();
+    void testToVerifyGetMaterialBuildInfo() {
+        String expectedMaterialInfo = expectedFurnitureInfoObj.getMaterialUsed();
+        String actualMaterialInfo = actualFurnitureInfoObj.getMaterialUsed();
 
-        Assertions.assertEquals(expectedManfDate,actualManfDate);
+        Assertions.assertEquals(expectedMaterialInfo, actualMaterialInfo);
     }
 
+    @Test
+    void testToVerifyGetManfDate() {
+        String expectedManfDate = expectedFurnitureInfoObj.getManfDate();
+        String actualManfDate = actualFurnitureInfoObj.getManfDate();
+
+        Assertions.assertEquals(expectedManfDate, actualManfDate);
+    }
 
 
 }

@@ -2,7 +2,7 @@ package AbstractFactoryDesignPattern;
 
 import Utils.ModernFamilyInfo;
 
-public class ModernSofa implements ISofa{
+public class ModernSofa implements ISofa {
 
     @Override
     public String getmanfName() {

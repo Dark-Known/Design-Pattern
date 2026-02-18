@@ -6,7 +6,7 @@ import Utils.TransportInfoNotification;
 
 public class TransportNotificationBuilder implements Builder<TransportInfoNotification> {
 
-//    @Override
+    //    @Override
 //    public Builder<TransportInfoNotification> reset() {
 //        this.notification= new TransportInfoNotification();
 //        return this;
@@ -20,16 +20,15 @@ public class TransportNotificationBuilder implements Builder<TransportInfoNotifi
     private String timeStamp;
 
 
-
     @Override
     public Builder<TransportInfoNotification> setTransportType(String transportType) {
-        this.transportType=transportType;
+        this.transportType = transportType;
         return this;
     }
 
     @Override
     public Builder<TransportInfoNotification> setDistanceInfo(int distanceInfo) {
-        this.distanceInfo=distanceInfo;
+        this.distanceInfo = distanceInfo;
         return this;
     }
 
@@ -40,88 +39,83 @@ public class TransportNotificationBuilder implements Builder<TransportInfoNotifi
 
     @Override
     public Builder<TransportInfoNotification> setUserName(String userName) {
-        this.userName=userName;
+        this.userName = userName;
         return this;
 
     }
 
     @Override
     public Builder<TransportInfoNotification> setUserAddress(String userAddress) {
-        this.userAddress=userAddress;
+        this.userAddress = userAddress;
         return this;
     }
 
     @Override
     public Builder<TransportInfoNotification> setSourceAddress(String sourceAddress) {
-        this.sourceAddress=sourceAddress;
+        this.sourceAddress = sourceAddress;
         return this;
     }
 
     @Override
     public Builder<TransportInfoNotification> setDestAddress(String destAddress) {
-        this.destAddress=destAddress;
+        this.destAddress = destAddress;
         return this;
     }
 
     @Override
     public Builder<TransportInfoNotification> setTimeStamp(String timeStamp) {
-        this.timeStamp=timeStamp;
+        this.timeStamp = timeStamp;
         return this;
     }
 
-    private void validateTransportType()
-    {
-        if( transportType==null ||transportType.trim().isEmpty())
-        {
+    private void validateTransportType() {
+        if (transportType == null || transportType.trim().isEmpty()) {
             throw new IllegalStateException("Invalid Transport Type");
         }
 
     }
-    private void validateDistanceInfo()
-    {
-        if(distanceInfo<10)
-        {
+
+    private void validateDistanceInfo() {
+        if (distanceInfo < 10) {
             throw new IllegalStateException("Invalid Distance Information");
         }
 
     }
-    private void validateUserName()
-    {
-        if( userName==null || userName.trim().isEmpty() )
-        {
+
+    private void validateUserName() {
+        if (userName == null || userName.trim().isEmpty()) {
             throw new IllegalStateException("Invalid User Name");
         }
 
     }
-    private void validateUserAddress()
-    {
-        if(userAddress==null || userAddress.trim().isEmpty() )
-        {
+
+    private void validateUserAddress() {
+        if (userAddress == null || userAddress.trim().isEmpty()) {
             throw new IllegalStateException("Invalid User Address");
         }
 
     }
-    private void validateSourceAddress(){
-        if(sourceAddress==null || sourceAddress.trim().isEmpty() )
-        {
+
+    private void validateSourceAddress() {
+        if (sourceAddress == null || sourceAddress.trim().isEmpty()) {
             throw new IllegalStateException("Invalid Source Address");
         }
 
     }
-    private void validateDestAddress(){
-        if(destAddress==null || destAddress.trim().isEmpty())
-        {
+
+    private void validateDestAddress() {
+        if (destAddress == null || destAddress.trim().isEmpty()) {
             throw new IllegalStateException("Invalid Destination Address");
         }
     }
 
-    private void validateTimeStamp(){
-        if(timeStamp==null || timeStamp.trim().isEmpty())
-        {
+    private void validateTimeStamp() {
+        if (timeStamp == null || timeStamp.trim().isEmpty()) {
             throw new IllegalStateException("Invalid Time Stamp");
         }
     }
-    public TransportInfoNotification build(){
+
+    public TransportInfoNotification build() {
         validateTransportType();
         validateDistanceInfo();
         validateUserName();
@@ -129,7 +123,7 @@ public class TransportNotificationBuilder implements Builder<TransportInfoNotifi
         validateSourceAddress();
         validateDestAddress();
         validateTimeStamp();
-        TransportInfoNotification notification=new TransportInfoNotification();
+        TransportInfoNotification notification = new TransportInfoNotification();
         notification.setTransportType(this.transportType);
         notification.setDistanceInfo(this.distanceInfo);
         notification.setUserName(this.userName);

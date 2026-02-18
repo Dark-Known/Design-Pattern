@@ -10,10 +10,11 @@ public class AddressInfo {
         this.destAddress = destAddress;
     }
 
-    public String getSourceAddress(){
+    public String getSourceAddress() {
         return this.sourceAddress;
     }
-    public String getDestAddress(){
+
+    public String getDestAddress() {
         return this.destAddress;
     }
 }

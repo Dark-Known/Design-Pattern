@@ -9,11 +9,12 @@ public class UserInfo {
         this.userName = userName;
         this.userAddress = userAddress;
     }
-    public String getUserName()
-    {
+
+    public String getUserName() {
         return this.userName;
     }
-    public String getUserAddress(){
+
+    public String getUserAddress() {
         return this.userAddress;
     }
 }
