@@ -8,7 +8,7 @@ public class CargoInfoMapper implements IMapper<CargoInfo> {
     private ExtractFamilyInfo extractor;
     private CargoParser cargoParser;
 
-    CargoInfoMapper(ExtractFamilyInfo extractor, CargoParser cargoParser) {
+    public CargoInfoMapper(ExtractFamilyInfo extractor, CargoParser cargoParser) {
         this.extractor = extractor;
         this.cargoParser = cargoParser;
     }
