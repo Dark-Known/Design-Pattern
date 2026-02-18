@@ -21,8 +21,8 @@ public enum VictoriaFamilyInfo {
 
     public static FurnitureInfo buildInfo() {
         return new FurnitureInfo(
-                VictoriaFamilyInfo.MATERIAL.getName(),
                 VictoriaFamilyInfo.MANF_NAME.getName(),
+                VictoriaFamilyInfo.MANF_ADD.getName(),
                 VictoriaFamilyInfo.MATERIAL.getName(),
                 CurrentTimeService.getDate()
         );
