@@ -34,7 +34,9 @@ public class NotificationProcessor implements INotificationProcessor {
         UserInfo userInfoObj = domainObj.getUserInfo();
         AddressInfo addressInfoObj = domainObj.getAddressInfoObj();
         CargoInfo cargoInfoObj = domainObj.getCargoInfoObj();
-        String timeStamp = CurrentTimeService.getTimeStamp();
+        CurrentTimeService timeService = new CurrentTimeService();
+
+        String timeStamp = timeService.getTimeStamp();
 
         // Notification Director
         NotificationBuilder notificationBuilder = new NotificationBuilder(
