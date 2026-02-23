@@ -13,17 +13,19 @@ import java.util.stream.Stream;
 
 public class TestForExtractFamilyInfo {
 
+    private final CurrentTimeService actualTimeService = new CurrentTimeService();
+
     private final FurnitureInfo expectedModernFamilyInfo = new FurnitureInfo(
             "Modern COMPANY",
             "Modern ADDRESS",
             "silk",
-            CurrentTimeService.getDate()
+            actualTimeService.getDate()
     );
     private final FurnitureInfo expectedVictoriaFamilyInfo = new FurnitureInfo(
             "Victorian COMPANY",
             "Victorian ADDRESS",
             "cotton",
-            CurrentTimeService.getDate()
+            actualTimeService.getDate()
     );
 
 
