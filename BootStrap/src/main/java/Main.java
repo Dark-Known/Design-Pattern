@@ -13,6 +13,7 @@ public class Main {
         JsonDataLoader jsonDataLoader = new JsonDataLoader();
         ArrayList<JsonObj> responseQueue = jsonDataLoader.loadData();
 
+
         // In Memory Units
         FamilyRegistry familyRegistry = new FamilyRegistry();
 
@@ -35,6 +36,10 @@ public class Main {
         CurrentTimeService timeService = new CurrentTimeService();
 
 
+        //Instantiate Validator Service
+        ValidateJson validateJson = new ValidateJson();
+
+
         // Instantiate Notification Service and Processor
         INotificationService notificationService = new NotificationService();
         INotificationProcessor processor = new NotificationProcessor(
@@ -48,7 +53,9 @@ public class Main {
 
         responseQueue.forEach((JsonObj res) -> {
             try {
-                processor.processor(res);
+
+                    validateJson.validate(res);
+                    processor.processor(res);
             } catch (Exception e) {
                 System.out.println(e.getMessage());
             }
@@ -57,4 +64,6 @@ public class Main {
 
 
     }
+
+
 }

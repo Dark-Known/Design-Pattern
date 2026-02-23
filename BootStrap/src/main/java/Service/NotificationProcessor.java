@@ -25,7 +25,6 @@ public class NotificationProcessor implements INotificationProcessor {
     public void processor(JsonObj jsonObj) {
 
 
-
         // Map Domain Obj to respective domain business Objects
         DomainObj domainObj = domainMapper.map(jsonObj);
         NotificationBuilder notificationBuilder = getNotificationBuilder(domainObj);
