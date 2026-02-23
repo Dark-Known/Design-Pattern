@@ -37,7 +37,7 @@ public class Main {
 
 
         //Instantiate Validator Service
-        ValidateJson validateJson = new ValidateJson();
+        JsonValidator validateJson = new JsonValidator();
 
 
         // Instantiate Notification Service and Processor
