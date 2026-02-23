@@ -6,10 +6,10 @@ import Util.INotificationProcessor;
 import Utils.*;
 
 public class NotificationProcessor implements INotificationProcessor {
-    private final NotificationService notificationService;
+    private final INotificationService notificationService;
     private final StorageService storageService;
 
-    public NotificationProcessor(NotificationService service, StorageService storage) {
+    public NotificationProcessor(INotificationService service, StorageService storage) {
         this.notificationService = service;
         this.storageService = storage;
     }
@@ -31,20 +31,7 @@ public class NotificationProcessor implements INotificationProcessor {
 
         // Map Domain Obj to respective domain business Objects
         DomainObj domainObj = domainMapper.map(jsonObj);
-        UserInfo userInfoObj = domainObj.getUserInfo();
-        AddressInfo addressInfoObj = domainObj.getAddressInfoObj();
-        CargoInfo cargoInfoObj = domainObj.getCargoInfoObj();
-        CurrentTimeService timeService = new CurrentTimeService();
-
-        String timeStamp = timeService.getTimeStamp();
-
-        // Notification Director
-        NotificationBuilder notificationBuilder = new NotificationBuilder(
-                timeStamp,
-                userInfoObj,
-                addressInfoObj,
-                cargoInfoObj
-        );
+        NotificationBuilder notificationBuilder = getNotificationBuilder(domainObj);
 
         // Notification Builder
         Builder<CargoInfoNotification> cargoNotificationBuilder = new CargoNotificationBuilder();
@@ -58,7 +45,25 @@ public class NotificationProcessor implements INotificationProcessor {
         notificationService.pushCargoNotification(cargoNotification);
         notificationService.pushTransportNotification(transportNotification);
 
-        storageService.increment(cargoParser.getFamilyName(jsonObj.getCargo()), cargoParser.getFurnitureName(jsonObj.getCargo()));
+        storageService.increment(cargoParser.getFamilyName(jsonObj.getCargo()),
+                cargoParser.getFurnitureName(jsonObj.getCargo()));
 
+    }
+
+    private NotificationBuilder getNotificationBuilder(DomainObj domainObj) {
+        UserInfo userInfoObj = domainObj.getUserInfo();
+        AddressInfo addressInfoObj = domainObj.getAddressInfoObj();
+        CargoInfo cargoInfoObj = domainObj.getCargoInfoObj();
+        CurrentTimeService timeService = new CurrentTimeService();
+
+        String timeStamp = timeService.getTimeStamp();
+
+        // Notification Director
+        return new NotificationBuilder(
+                timeStamp,
+                userInfoObj,
+                addressInfoObj,
+                cargoInfoObj
+        );
     }
 }

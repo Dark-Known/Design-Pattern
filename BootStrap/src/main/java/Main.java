@@ -2,7 +2,9 @@ import Service.JsonDataLoader;
 import Service.NotificationProcessor;
 import Service.NotificationService;
 import Service.StorageService;
+import Util.INotificationProcessor;
 import Utils.FamilyRegistry;
+import Utils.INotificationService;
 import Utils.JsonObj;
 
 import java.util.ArrayList;
@@ -16,9 +18,13 @@ public class Main {
 
         // In Memory Units
         FamilyRegistry familyRegistry = new FamilyRegistry();
+
+        // Instantiate Storage Service
         StorageService storage = new StorageService(familyRegistry);
-        NotificationService notificationService = new NotificationService();
-        NotificationProcessor processor = new NotificationProcessor(
+
+        // Instantiate Notification Service and Processor
+        INotificationService notificationService = new NotificationService();
+        INotificationProcessor processor = new NotificationProcessor(
                 notificationService,
                 storage
         );
