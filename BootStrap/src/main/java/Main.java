@@ -1,7 +1,4 @@
-import Service.JsonDataLoader;
-import Service.NotificationProcessor;
-import Service.NotificationService;
-import Service.StorageService;
+import Service.*;
 import Util.INotificationProcessor;
 import Utils.FamilyRegistry;
 import Utils.INotificationService;
@@ -22,12 +19,33 @@ public class Main {
         // Instantiate Storage Service
         StorageService storage = new StorageService(familyRegistry);
 
+        // Create extractor & CargoParser
+        ExtractFamilyInfo extractFamilyInfo = new ExtractFamilyInfo();
+        CargoParser cargoParser = new CargoParser();
+
+        // Create respective Domain Obj Mappers
+        UserMapper userMapper = new UserMapper();
+        AddressMapper addressMapper = new AddressMapper();
+        CargoInfoMapper cargoInfoMapper = new CargoInfoMapper(extractFamilyInfo, cargoParser);
+        DomainMapper domainMapper = new DomainMapper(
+                userMapper, addressMapper, cargoInfoMapper
+        );
+
+        // Instantiate Time Service
+        CurrentTimeService timeService = new CurrentTimeService();
+
+
         // Instantiate Notification Service and Processor
         INotificationService notificationService = new NotificationService();
         INotificationProcessor processor = new NotificationProcessor(
                 notificationService,
-                storage
+                storage,
+                domainMapper,
+                cargoParser,
+                timeService
         );
+
+
         responseQueue.forEach((JsonObj res) -> {
             try {
                 processor.processor(res);
