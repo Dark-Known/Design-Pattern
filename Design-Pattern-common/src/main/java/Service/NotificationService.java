@@ -34,7 +34,7 @@ public class NotificationService implements INotificationService {
     public void pushTransportNotification(TransportInfoNotification transportInfoNotification) {
         try {
             if (!sendTransportNotification(transportInfoNotification)) {
-                throw new Exception("Attempt to push notificaiton has failed");
+                throw new Exception("Attempt to push notification has failed");
             }
         } catch (Exception e) {
             System.out.println(e.getMessage());

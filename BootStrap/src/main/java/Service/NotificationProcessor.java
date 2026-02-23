@@ -6,43 +6,28 @@ import Util.INotificationProcessor;
 import Utils.*;
 
 public class NotificationProcessor implements INotificationProcessor {
-    private final NotificationService notificationService;
+    private final INotificationService notificationService;
     private final StorageService storageService;
+    private final DomainMapper domainMapper;
+    private final CargoParser cargoParser;
+    private final CurrentTimeService timeService;
 
-    public NotificationProcessor(NotificationService service, StorageService storage) {
+    public NotificationProcessor(INotificationService service, StorageService storage,
+                                 DomainMapper domainMapper, CargoParser cargoParser, CurrentTimeService timeService) {
         this.notificationService = service;
         this.storageService = storage;
+        this.domainMapper= domainMapper;
+        this.cargoParser=cargoParser;
+        this.timeService = timeService;
     }
 
     @Override
     public void processor(JsonObj jsonObj) {
 
-        // Create extractor & CargoParser
-        ExtractFamilyInfo extractFamilyInfo = new ExtractFamilyInfo();
-        CargoParser cargoParser = new CargoParser();
-
-        // Create respective Domain Obj Mappers
-        UserMapper userMapper = new UserMapper();
-        AddressMapper addressMapper = new AddressMapper();
-        CargoInfoMapper cargoInfoMapper = new CargoInfoMapper(extractFamilyInfo, cargoParser);
-        DomainMapper domainMapper = new DomainMapper(
-                userMapper, addressMapper, cargoInfoMapper
-        );
 
         // Map Domain Obj to respective domain business Objects
         DomainObj domainObj = domainMapper.map(jsonObj);
-        UserInfo userInfoObj = domainObj.getUserInfo();
-        AddressInfo addressInfoObj = domainObj.getAddressInfoObj();
-        CargoInfo cargoInfoObj = domainObj.getCargoInfoObj();
-        String timeStamp = CurrentTimeService.getTimeStamp();
-
-        // Notification Director
-        NotificationBuilder notificationBuilder = new NotificationBuilder(
-                timeStamp,
-                userInfoObj,
-                addressInfoObj,
-                cargoInfoObj
-        );
+        NotificationBuilder notificationBuilder = getNotificationBuilder(domainObj);
 
         // Notification Builder
         Builder<CargoInfoNotification> cargoNotificationBuilder = new CargoNotificationBuilder();
@@ -56,7 +41,23 @@ public class NotificationProcessor implements INotificationProcessor {
         notificationService.pushCargoNotification(cargoNotification);
         notificationService.pushTransportNotification(transportNotification);
 
-        storageService.increment(cargoParser.getFamilyName(jsonObj.getCargo()), cargoParser.getFurnitureName(jsonObj.getCargo()));
+        storageService.increment(cargoParser.getFamilyName(jsonObj.getCargo()),
+                cargoParser.getFurnitureName(jsonObj.getCargo()));
 
+    }
+
+    private NotificationBuilder getNotificationBuilder(DomainObj domainObj) {
+        UserInfo userInfoObj = domainObj.getUserInfo();
+        AddressInfo addressInfoObj = domainObj.getAddressInfoObj();
+        CargoInfo cargoInfoObj = domainObj.getCargoInfoObj();
+        String timeStamp = timeService.getTimeStamp();
+
+        // Notification Director
+        return new NotificationBuilder(
+                timeStamp,
+                userInfoObj,
+                addressInfoObj,
+                cargoInfoObj
+        );
     }
 }

@@ -20,11 +20,30 @@ public enum ModernFamilyInfo {
     }
 
     public static FurnitureInfo buildInfo() {
+        CurrentTimeService timeService = new CurrentTimeService();
         return new FurnitureInfo(
                 ModernFamilyInfo.MANF_NAME.getName(),
                 ModernFamilyInfo.MANF_ADD.getName(),
                 ModernFamilyInfo.MATERIAL.getName(),
-                CurrentTimeService.getDate());
+                timeService.getDate());
+    }
+    public static FurnitureInfo buildInfo(String manfDate)
+    {
+        return new FurnitureInfo(
+                ModernFamilyInfo.MANF_NAME.getName(),
+                ModernFamilyInfo.MANF_ADD.getName(),
+                ModernFamilyInfo.MATERIAL.getName(),
+                manfDate);
+
+    }
+    public static FurnitureInfo buildInfo(CurrentTimeService timeService)
+    {
+        return new FurnitureInfo(
+                ModernFamilyInfo.MANF_NAME.getName(),
+                ModernFamilyInfo.MANF_ADD.getName(),
+                ModernFamilyInfo.MATERIAL.getName(),
+                timeService.getTimeStamp());
+
     }
 
     public String getName() {
