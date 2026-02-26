@@ -8,8 +8,8 @@ import java.util.List;
 
 public class ResultConverter {
 
-    public List<String> getListOfMessages()
-    {
-
-    }
+//    public List<String> getListOfMessages()
+//    {
+//
+//    }
 }
