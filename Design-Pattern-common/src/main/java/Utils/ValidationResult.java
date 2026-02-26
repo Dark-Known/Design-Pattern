@@ -43,5 +43,10 @@ public class ValidationResult {
         return this.errorType==ErrorType.SUCCESS;
     }
 
+    public String toString()
+    {
+        return "["+errorType+"] "+resultMessage;
+    }
+
 }
 

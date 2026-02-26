@@ -28,6 +28,32 @@ public class ResultConverter {
         );
         return Collections.unmodifiableList(MessageList);
 
+    }
+
+    public List<String> getLoggableMessages(ErrorList errorList)
+    {
+        List<String> MessageList = new ArrayList<>();
+        errorList.getResultList().forEach(
+                (validationResult)->{
+                        MessageList.add(validationResult.toString());
+
+                }
+        );
+        return Collections.unmodifiableList(MessageList);
+
+    }
+    public List<String> getLoggableMessageByType(ErrorList errorList, ErrorType resultType)
+    {
+        List<String> MessageList = new ArrayList<>();
+        errorList.getResultList().forEach(
+                (validationResult)->{
+                    if(validationResult.getType()==resultType)
+                    {
+                        MessageList.add(validationResult.toString());
+                    }
+                }
+        );
+        return Collections.unmodifiableList(MessageList);
 
     }
 }
