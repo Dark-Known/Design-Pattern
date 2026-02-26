@@ -37,7 +37,7 @@ public class Main {
 
 
         //Instantiate Validator Service
-        JsonValidator validateJson = new JsonValidator();
+//        JsonValidator validateJson = new JsonValidator();
 
 
         // Instantiate Notification Service and Processor
@@ -54,7 +54,7 @@ public class Main {
         responseQueue.forEach((JsonObj res) -> {
             try {
 
-                    validateJson.validate(res);
+//                    validateJson.validate(res);
                     processor.processor(res);
             } catch (Exception e) {
                 System.out.println(e.getMessage());
