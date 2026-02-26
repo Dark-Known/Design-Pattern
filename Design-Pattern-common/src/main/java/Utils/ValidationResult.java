@@ -41,5 +41,6 @@ public class ValidationResult {
     {
         return this.errorType==ErrorType.SUCCESS;
     }
+
 }
 
