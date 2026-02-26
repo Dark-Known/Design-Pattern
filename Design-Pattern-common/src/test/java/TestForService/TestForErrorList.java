@@ -76,4 +76,19 @@ public class TestForErrorList {
                     resultList.add(ValidationResult.setSuccessMessage("Test"));
                 });
     }
+
+    @Test
+    @DisplayName("mergeList() should be able to merge result lists")
+    void ShouldBeAbleToMergeList()
+    {
+        ErrorList errorListObj =ErrorList.empty();
+        errorListObj.withSuccess("Test");
+        List<ValidationResult> tempResultList=List.of(
+                ValidationResult.setSuccessMessage("Test Message")
+        );
+        ErrorList updatedErrorListObj=errorListObj.mergeList(tempResultList);
+
+        Assertions.assertEquals(2,updatedErrorListObj.getResultList().size());
+
+    }
 }
