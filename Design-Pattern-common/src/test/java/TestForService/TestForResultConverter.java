@@ -46,6 +46,14 @@ public class TestForResultConverter {
         Assertions.assertEquals(expectedFailureList.get(1),actualFailureList.get(1));
 
     }
+    @Test
+    @DisplayName("Should return list of loggable Messages")
+    void ShouldExtractLoggableMessage()
+    {
+        List<String> logMessageList= resultConverter.getLoggableMessage(errorList);
+        Assertions.assertEquals(6,logMessageList.size());
+        Assertions.assertEquals("[SUCCESS] Transaction Success for OP1",logMessageList.get(0));
+    }
 
     @Test
     @DisplayName("List extracted Should not be modifiable")
