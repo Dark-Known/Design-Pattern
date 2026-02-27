@@ -34,7 +34,7 @@ public class TestForResultConverter {
     @DisplayName("Should return list of Messages based on error type")
     void ShouldExtractMessageBasedOnType()
     {
-        List<String> actualFailureList=  resultConverter.extractMessages(errorList, ErrorType.FAILURE);
+        List<String> actualFailureList=  resultConverter.extractByType(errorList, ErrorType.FAILURE);
         List<String> expectedFailureList= List.of(
                 "Transaction Failure for OP1",
                 "Transaction Failure for OP2"
@@ -51,7 +51,7 @@ public class TestForResultConverter {
     @DisplayName("List extracted Should not be modifiable")
     void ShouldThrowUnsupportedException()
     {
-        List<String> actualFailureList=  resultConverter.extractMessages(errorList, ErrorType.FAILURE);
+        List<String> actualFailureList=  resultConverter.getLoggableMessageByType(errorList, ErrorType.FAILURE);
 
         Assertions.assertThrows(UnsupportedOperationException.class,
                 ()->{
