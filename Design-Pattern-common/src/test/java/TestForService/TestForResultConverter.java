@@ -38,7 +38,6 @@ public class TestForResultConverter {
         List<String> expectedFailureList= List.of(
                 "Transaction Failure for OP1",
                 "Transaction Failure for OP2"
-
         );
 
         Assertions.assertEquals(2,actualFailureList.size());
@@ -53,6 +52,15 @@ public class TestForResultConverter {
         List<String> logMessageList= resultConverter.getLoggableMessage(errorList);
         Assertions.assertEquals(6,logMessageList.size());
         Assertions.assertEquals("[SUCCESS] Transaction Success for OP1",logMessageList.get(0));
+    }
+
+    @Test
+    @DisplayName("Should return failure messages")
+    void ShouldExtractFailureMessage()
+    {
+        List<String> failureMessageList= resultConverter.getFailureMessageList(errorList);
+        Assertions.assertEquals(2,failureMessageList.size());
+        Assertions.assertEquals("Transaction Failure for OP1",failureMessageList.get(0));
     }
 
     @Test
