@@ -1,7 +1,9 @@
 package Service;
 
-import Utils.ValidationResult;
+import Utils.ErrorList;
 
 public interface IFieldValidator {
-    ValidationResult validate();
+   <T> ErrorList validateFormat(String fieldName,T fieldValue);
+    <T> ErrorList validateValue(T fieldValue);
+    <T> ErrorList isValid(String fieldName,T fieldValue);
 }
