@@ -4,9 +4,6 @@ import Utils.ErrorList;
 
 public interface IFieldValidator {
    <T> ErrorList validateFormat(String fieldName,T fieldValue);
-    <T> ErrorList validateValue(T fieldValue);
+    <T> ErrorList validateValue(String fieldName,T fieldValue);
     <T> ErrorList isValid(String fieldName,T fieldValue);
-    void test();
-
-
 }
