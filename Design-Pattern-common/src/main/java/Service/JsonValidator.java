@@ -1,7 +1,7 @@
 package Service;
 
+import Utils.ErrorList;
 import Utils.JsonObj;
-import Utils.ValidationResult;
 
 public class JsonValidator {
     private final TextFieldValidator textFieldValidator;
@@ -22,26 +22,26 @@ public class JsonValidator {
         return VALIDATOR_INSTANCE;
     }
 
-
-
     public void validate(JsonObj jsonObj)
     {
 
     }
-    private final String transportMode;
-    private final int distance;
-    private final String cargo;
-    private final String userName;
-    private final String userAddress;
-    private final String sourceAddress;
-    private final String destAddress;
 
-
-
-    private void validateTextFields(JsonObj jsonObj)
+    private ErrorList validateTextFields(JsonObj jsonObj)
     {
-        textFieldValidator.isValid("Transport Mode",)
+
+        //TODO: We need to implement ways to collect all errors from various text fields
+        ErrorList errorList=ErrorList.of(textFieldValidator.
+                isValid("Transport Mode",jsonObj.getTransportMode()).
+                getResultList());
+
+        return errorList.mergeList(textFieldValidator.
+                isValid("Cargo Name",jsonObj.getCargo()).
+                getResultList());
+
     }
+
+    private
     private void validateAddressFields()
     {
 
